@@ -1,0 +1,9 @@
+D:/Project/Git/DICOM_V2/build/CMakeFiles/Experimental.dir
+D:/Project/Git/DICOM_V2/build/CMakeFiles/Nightly.dir
+D:/Project/Git/DICOM_V2/build/CMakeFiles/Continuous.dir
+D:/Project/Git/DICOM_V2/build/CMakeFiles/NightlyMemoryCheck.dir
+D:/Project/Git/DICOM_V2/build/CMakeFiles/DicomImageTool.dir
+D:/Project/Git/DICOM_V2/build/CMakeFiles/PACKAGE.dir
+D:/Project/Git/DICOM_V2/build/CMakeFiles/RUN_TESTS.dir
+D:/Project/Git/DICOM_V2/build/CMakeFiles/ALL_BUILD.dir
+D:/Project/Git/DICOM_V2/build/CMakeFiles/ZERO_CHECK.dir

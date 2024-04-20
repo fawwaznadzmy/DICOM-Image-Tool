@@ -1,0 +1,10 @@
+^D:\PROJECT\GIT\DICOM_V2\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Project/Git/DICOM_V2 -BD:/Project/Git/DICOM_V2/build --check-stamp-file D:/Project/Git/DICOM_V2/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

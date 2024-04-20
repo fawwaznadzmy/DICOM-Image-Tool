@@ -1,6 +1,26 @@
 # DICOM Image Processing Tool
 
+Create an application (command line or GUI based) that can be used to display DICOM image as well as perform image processing technique/algorithm to enhance the default image
 
+Requirements:
+- [X] Use C++ as main programming language
+- [x] Setup project using CMake
+- [x] Use any UI framework and/or image processing library where applicable
+- [x] Application runs on Windows and/or Linux
+- [x] Project code is stored in Git repository (github or Gitlab)
+- [x] Provide documentation for anyone to setup, compile and run the application on other machine
+
+- [ ] Read and display dental x-ray image file (.jpeg, tiff or .png) from local storage
+- [ ] Display image histogram information of the dental x-ray image
+- [ ] Auto rotate the image when displaying whereby the indicator on the image should be on the top left corner
+
+- [ ] Read and display dental x-ray image file using DICOM format (.dcm)
+- [ ] Read and display DICOM metadata of the DICOM file from local storage
+- [ ] Perform some basic image processing technique to enhance the details of the existing DICOM image
+
+- [ ] Write unit test (TDD/BDD)
+
+## How to Setup, Compile and Run
 ### Installing CMAKE
 
 - download cmake here for Windows  https://cmake.org/download/

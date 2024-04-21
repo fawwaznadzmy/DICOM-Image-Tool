@@ -124,7 +124,7 @@
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>D:/Project/Git/DICOM_V2/DICOM-Image-Tool/build/Debug/DicomImageTool.lib</ImportLibrary>
       <ProgramDataBaseFile>D:/Project/Git/DICOM_V2/DICOM-Image-Tool/build/Debug/DicomImageTool.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -170,7 +170,7 @@
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>D:/Project/Git/DICOM_V2/DICOM-Image-Tool/build/Release/DicomImageTool.lib</ImportLibrary>
       <ProgramDataBaseFile>D:/Project/Git/DICOM_V2/DICOM-Image-Tool/build/Release/DicomImageTool.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -216,7 +216,7 @@
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>D:/Project/Git/DICOM_V2/DICOM-Image-Tool/build/MinSizeRel/DicomImageTool.lib</ImportLibrary>
       <ProgramDataBaseFile>D:/Project/Git/DICOM_V2/DICOM-Image-Tool/build/MinSizeRel/DicomImageTool.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -261,7 +261,7 @@
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>D:/Project/Git/DICOM_V2/DICOM-Image-Tool/build/RelWithDebInfo/DicomImageTool.lib</ImportLibrary>
       <ProgramDataBaseFile>D:/Project/Git/DICOM_V2/DICOM-Image-Tool/build/RelWithDebInfo/DicomImageTool.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -325,8 +325,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\app.cpp" />
-    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\frame.cpp" />
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\imageProcessor.cpp" />
     <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>

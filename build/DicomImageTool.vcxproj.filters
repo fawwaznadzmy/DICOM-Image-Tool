@@ -1,16 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\Project\Git\DICOM_V2\app\src\main.cpp">
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\app.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\frame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Project\Git\DICOM_V2\CMakeLists.txt" />
+    <CustomBuild Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{1DAB124B-077F-3B91-9427-336EF6AA2143}</UniqueIdentifier>
+      <UniqueIdentifier>{60FA77B9-C497-38AA-89DE-59276EC269E0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

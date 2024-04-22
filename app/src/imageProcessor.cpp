@@ -2,7 +2,7 @@
 #include "imageProcessor.h"
 
 ImageProcessor::ImageProcessor(const std::string& imagePath){
-    m_originalImage = imread(imagePath);
+    m_originalImage = imread(imagePath,IMREAD_GRAYSCALE);
 
     if (m_originalImage.empty()) {
         std::cerr << "Error: Unable to load image " << imagePath << std::endl;
@@ -10,19 +10,73 @@ ImageProcessor::ImageProcessor(const std::string& imagePath){
     }
 }
 
-void ImageProcessor::processImage() {
+Mat ImageProcessor::markingSegmentation(const Mat& inputImage)
+{
 
-    // Process the image (Example: Convert to grayscale)
-    Mat invertImage;
-    bitwise_not(m_originalImage, invertImage);
+    Mat binary;
+    threshold(inputImage, binary, 240, 255, THRESH_BINARY);
 
+    return binary;
+}
+
+Point ImageProcessor::markingLocation(const Mat& inputImage)
+{
+
+    Mat binary;
+    double minArea = DBL_MAX;
+    int minIdx = -1;
+
+    threshold(inputImage, binary, 240, 255, THRESH_BINARY);
+
+    vector<vector<Point>> contours;
+    findContours(binary, contours,  RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
+
+    for (int i = 0; i < contours.size(); i++) 
+    {
+        double area = contourArea(contours[i]);
+       
+        if (area < minArea && area != 0.00) {
+            minArea = area;
+            minIdx = i;
+        }
+    }
+
+    if (minIdx != -1) 
+    {
+        // Get the bounding box of the contour
+        Rect bRect = boundingRect(contours[minIdx]);
+        Point markingCenter = bRect.tl() + (bRect.br() - bRect.tl()) / 2;
+
+        return markingCenter;
+    }
+
+    return Point();
+}
+
+Mat ImageProcessor::processAndCropImage(const Mat& inputImage) {
+   
     // Convert the image to grayscale
-    Mat gray;
-    cvtColor(invertImage, gray, COLOR_BGR2GRAY);
+    Mat gray = inputImage.clone();
 
+    // Access and modify pixel values
+    for (int y = 0; y < gray.rows; ++y) {
+        for (int x = 0; x < gray.cols; ++x) {
+            // Assuming it's a grayscale image
+            if(((gray.at<uchar>(y, x) >=0 ) && (gray.at<uchar>(y, x) <= 100)) || 
+              (gray.at<uchar>(y, x) >= 230) ) // Invert pixel value
+              {
+                  gray.at<uchar>(y, x) =255 ;
+              }
+                
+        }
+    }
+
+     // Invert the image
+    Mat invertedImage;
+    bitwise_not(gray, invertedImage);
     // Apply Otsu's thresholding
     Mat binary;
-    threshold(gray, binary, 0, 255, THRESH_BINARY | THRESH_OTSU);
+    threshold(invertedImage, binary, 0, 255, THRESH_BINARY | THRESH_OTSU);
 
     // Find contours
     vector<vector<Point>> contours;
@@ -31,7 +85,7 @@ void ImageProcessor::processImage() {
     // Find the largest contour
     double maxArea = 0;
     int maxContourIdx = -1;
-    for(size_t i = 0; i < contours.size(); i++) {
+    for(int i = 0; i < contours.size(); i++) {
         double area = contourArea(contours[i]);
         if(area > maxArea) {
             maxArea = area;
@@ -39,34 +93,42 @@ void ImageProcessor::processImage() {
         }
     }
 
+    // Crop the original image to include only the region within the largest contour
     if(maxContourIdx != -1) {
-        Rect boundingRect = cv::boundingRect(contours[maxContourIdx]);
-        Mat croppedImage = m_originalImage(boundingRect).clone(); // Clone to ensure independence
-        // Display the cropped image
-        imshow("Cropped Image", croppedImage);
-        waitKey(0);
+        Rect boundingRec = boundingRect(contours[maxContourIdx]);
+        return inputImage(boundingRec).clone(); // Clone to ensure independence
     }
-    waitKey(0);
 
-   // resize(processedImage, processedImage, Size(), 0.75, 0.75);
+    // If no contour found, return an empty image
+    return Mat();
+}
 
-    // Access and modify pixel values
-  /*  for (int y = 0; y < processedImage.rows; ++y) {
-        for (int x = 0; x < processedImage.cols; ++x) {
-            // Assuming it's a grayscale image
-            processedImage.at<unsigned char>(y, x) = 255 - processedImage.at<unsigned char>(y, x); // Invert pixel value
-            if( (processedImage.at<unsigned char>(y, x) <= 255) && (processedImage.at<unsigned char>(y, x) >= 155))
-                processedImage.at<unsigned char>(y, x) = 0;
+bool ImageProcessor::isImageNeedToRotate(const Mat& inputImage, Point marking)
+{
+        if (marking.x > inputImage.cols / 2 && marking.y > inputImage.rows / 2) {
+          return true;
         }
-    } 
+
+    return false;
+}
+
+void ImageProcessor::processImage() {
+
+    // Process and crop the image
+    Mat croppedImage = processAndCropImage(m_originalImage);
+    Point mark = markingLocation(croppedImage);
+
+  
+     Mat rotated = croppedImage ;
+    if(isImageNeedToRotate(croppedImage, mark ))
+    {
+       rotate(croppedImage, rotated, ROTATE_180);
+    }   
+            
     
-     Mat img_bw;
-     threshold(processedImage, img_bw, 0, 255, THRESH_OTSU);
-    // Show result
-    imshow("Result", img_bw);
-    waitKey(0);*/
-    // Pass the processed image information back to the main thread
-    //m_imageInfo = "Image Size: " + std::to_string(processedImage.rows) + "x" + std::to_string(processedImage.cols);
+    // Iterate through each pixel
+    imshow("Result",  rotated);
+    waitKey(0);
 }
 
 std::string ImageProcessor::getImageInfo() const 

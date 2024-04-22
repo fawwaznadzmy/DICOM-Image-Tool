@@ -10,9 +10,9 @@ Requirements:
 - [x] Project code is stored in Git repository (github or Gitlab)
 - [x] Provide documentation for anyone to setup, compile and run the application on other machine
 
-- [ ] Read and display dental x-ray image file (.jpeg, tiff or .png) from local storage
+- [x] Read and display dental x-ray image file (.jpeg, tiff or .png) from local storage
 - [ ] Display image histogram information of the dental x-ray image
-- [ ] Auto rotate the image when displaying whereby the indicator on the image should be on the top left corner
+- [x] Auto rotate the image when displaying whereby the indicator on the image should be on the top left corner
 
 - [ ] Read and display dental x-ray image file using DICOM format (.dcm)
 - [ ] Read and display DICOM metadata of the DICOM file from local storage

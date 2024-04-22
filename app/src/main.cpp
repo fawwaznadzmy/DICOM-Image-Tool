@@ -1,6 +1,6 @@
 #include <iostream>
 #include <thread>
-#include "imageProcessor.h"
+#include "thread.h"
 
 
 void printHelp() {
@@ -22,13 +22,11 @@ int main(int argc, char* argv[]) {
     std::string imagePath = argv[1];
 
     // Image processing in a separate thread
-    ImageProcessor processor(imagePath);
-    std::thread processingThread(&ImageProcessor::processImage, &processor);
+    MyThread myThread(imagePath);
+    std::thread processingThread(&MyThread::worker, &myThread);
     processingThread.join();
 
     // Get processed image information from the ImageProcessor object
-    std::string imageInfo = processor.getImageInfo();
-    std::cout << "Processed Image Info: " << imageInfo << std::endl;
 
     return 0;
 }

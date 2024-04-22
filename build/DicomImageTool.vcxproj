@@ -325,8 +325,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\imageProcessor.cpp" />
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\fileHandle.cpp" />
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\image.cpp" />
     <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\main.cpp" />
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\processor.cpp" />
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\thread.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\ZERO_CHECK.vcxproj">

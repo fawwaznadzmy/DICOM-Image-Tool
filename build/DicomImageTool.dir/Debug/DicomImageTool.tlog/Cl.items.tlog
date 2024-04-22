@@ -1,2 +1,5 @@
-D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\imageProcessor.cpp;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\DicomImageTool.dir\Debug\imageProcessor.obj
+D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\fileHandle.cpp;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\DicomImageTool.dir\Debug\fileHandle.obj
+D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\image.cpp;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\DicomImageTool.dir\Debug\image.obj
 D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\main.cpp;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\DicomImageTool.dir\Debug\main.obj
+D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\processor.cpp;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\DicomImageTool.dir\Debug\processor.obj
+D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\thread.cpp;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\DicomImageTool.dir\Debug\thread.obj

@@ -41,7 +41,7 @@ bool WindowsFileHandle::deleteFile() const{
     }
 }
 
-long long WindowsFileHandle::getFileSize()const {
+long long WindowsFileHandle::getFileSize() const {
     WIN32_FILE_ATTRIBUTE_DATA fileInfo;
     if (GetFileAttributesExA(filePath.c_str(), GetFileExInfoStandard, &fileInfo)) {
         LARGE_INTEGER fileSize;
@@ -54,6 +54,9 @@ long long WindowsFileHandle::getFileSize()const {
         return -1;
     }
 }
+
+
+
 
 #else
 bool LinuxFileHandle::saveFile(const std::string& content) const{

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\dicomReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\fileHandle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\processor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\thread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\dicomReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\fileHandle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\processor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\thread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{C82E6137-9363-3E9E-98FA-34EEA9E38D91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{60FA77B9-C497-38AA-89DE-59276EC269E0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

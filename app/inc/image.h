@@ -6,6 +6,6 @@ class Image{
 public:
     Image (const std::string& path);
     ~Image ();
-    FileHandle * file;
+    
     Processor *processor;
 };

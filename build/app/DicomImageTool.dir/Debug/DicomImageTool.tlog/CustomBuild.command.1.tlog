@@ -1,0 +1,10 @@
+^D:\PROJECT\GIT\DICOM_V2\DICOM-IMAGE-TOOL\APP\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Project/Git/DICOM_V2/DICOM-Image-Tool -BD:/Project/Git/DICOM_V2/DICOM-Image-Tool/build --check-stamp-file D:/Project/Git/DICOM_V2/DICOM-Image-Tool/build/app/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

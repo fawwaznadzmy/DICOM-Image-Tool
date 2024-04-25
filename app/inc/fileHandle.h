@@ -20,7 +20,7 @@ public:
     virtual ~FileHandle() = default;
 
     // Method to get file extension
-    std::string getFileExtension() const;
+    virtual std::string getFileExtension() const;
     // Method to save file
     virtual bool saveFile(const std::string& content) const = 0;
 
@@ -32,6 +32,7 @@ public:
 
     // Factory method to create FileHandle object based on OS
     static FileHandle* create(const std::string& path);
+
 };
 
 // Windows implementation
@@ -45,6 +46,7 @@ public:
     bool deleteFile() const override ;
 
     long long getFileSize() const override ;
+
 };
 
 #else

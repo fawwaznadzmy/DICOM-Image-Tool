@@ -82,6 +82,10 @@
         "xtr1common": "cpp",
         "xtree": "cpp",
         "xutility": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "cinttypes": "cpp",
+        "cstdarg": "cpp",
+        "strstream": "cpp",
+        "filesystem": "cpp"
     }
 }

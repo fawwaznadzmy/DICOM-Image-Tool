@@ -11,7 +11,7 @@ Requirements:
 - [x] Provide documentation for anyone to setup, compile and run the application on other machine
 
 - [x] Read and display dental x-ray image file (.jpeg, tiff or .png) from local storage
-- [ ] Display image histogram information of the dental x-ray image
+- [x] Display image histogram information of the dental x-ray image
 - [x] Auto rotate the image when displaying whereby the indicator on the image should be on the top left corner
 
 - [ ] Read and display dental x-ray image file using DICOM format (.dcm)
@@ -45,10 +45,20 @@ https://docs.wxwidgets.org/latest/overview_cmake.html
     1. C:\opencv\build\x64\vc16\bin
     2. C:\opencv\build\x64\vc16\lib
 
-## MSBuild.exe
+### MSBuild.exe
 
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin
 MSBuild.exe build/vs/DicomImageTool.vcxproj
+
+### DICOM DCMTK Library
+
+- Download here https://dicom.offis.de/en/dcmtk/dcmtk-tools/
+https://dicom.offis.de/dcmtk.php.en
+https://dicom.offis.de/en/dcmtk/dcmtk-software-development/
+
+https://support.dcmtk.org/redmine/projects/dcmtk/wiki/howto_cmakeconfiguration
+- C:\dcmtk-3.6.8-win64-dynamic\bin
+
 
 ,,,
 cmake -G "MinGW Makefiles" -S . -B out/build

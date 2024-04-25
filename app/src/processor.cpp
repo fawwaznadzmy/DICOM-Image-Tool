@@ -2,19 +2,30 @@
 #include "processor.h"
 
 Processor::Processor(const std::string& path){
-
+     file = FileHandle::create(path);
 }
 
 Processor* Processor::create(const std::string& path) {
-#ifdef _WIN32
+#ifdef _OPENCV_PROC
     return new OpenCVImageProcessor(path);
 #else
     return new CustoMmageProcessor (path);
 #endif
 }
 
+#ifdef _OPENCV_PROC
 OpenCVImageProcessor::OpenCVImageProcessor(const std::string& path): Processor(path)
 {
+    std::string ext = file->getFileExtension();
+
+    if(ext == ".dcm"){
+        //convert o JPEG
+
+    }
+
+    // for .dcm need to do something
+    //
+   
     Mat img = imread(path,IMREAD_GRAYSCALE);
 
     if (img.empty()) {
@@ -178,3 +189,5 @@ bool OpenCVImageProcessor::isImageNeedToRotate(const Mat& src, Point pnt)
 
     return false;
 }
+
+#endif

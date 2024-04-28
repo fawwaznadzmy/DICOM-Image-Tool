@@ -9,7 +9,7 @@ std::string FileHandle::getFileExtension() const {
     return "";
 }
 
-// Factory method implementation
+
 FileHandle* FileHandle::create(const std::string& path) {
 #ifdef _WIN32
     return new WindowsFileHandle(path);

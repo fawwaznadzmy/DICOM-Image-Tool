@@ -2,13 +2,6 @@
 #include <stdio.h>
 #include "fileHandle.h"
 
-namespace {
-    int ReturnValue(){return 88;}
-}
-
-TEST(fileHandleTest, Return){
-    EXPECT_EQ(ReturnValue(), 88);
-}
 
 TEST(fileHandleTest, CheckPngExtension){
     std::string path = "C:/pic/2174d2be-ccf6-4235-bd5f-afd400d96f86.png";

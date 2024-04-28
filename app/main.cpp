@@ -10,8 +10,6 @@ void printHelp() {
 
 int main(int argc, char* argv[]) {
 
-
-
     if (argc != 2) {
         printHelp();
         return 1;
@@ -25,12 +23,9 @@ int main(int argc, char* argv[]) {
 
     std::string imagePath = argv[1];
 
-    // Image processing in a separate thread
     MyThread myThread(imagePath);
     std::thread processingThread(&MyThread::worker, &myThread);
     processingThread.join();
-
-    // Get processed image information from the ImageProcessor object
 
     return 0;
 }

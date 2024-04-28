@@ -4,7 +4,7 @@
     <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\dicomReader.cpp">
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\dicom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\fileHandle.cpp">
@@ -16,12 +16,15 @@
     <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\processor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\processorAdapter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\thread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\dicomReader.h">
+    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\dicom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\fileHandle.h">
@@ -31,6 +34,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\processor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\processorAdapter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\thread.h">

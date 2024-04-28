@@ -1,7 +1,6 @@
 
 #include "myImage.h"
 
-MyImage::MyImage (const std::string& path){
+MyImage::MyImage (const std::string& path): ProcessorAdapter(path){
     
-    processor = Processor::create(path);
 }

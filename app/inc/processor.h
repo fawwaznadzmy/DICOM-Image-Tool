@@ -12,9 +12,11 @@ using namespace cv;
 #endif
 using namespace std;
 
+
+
 class Processor {
 public:
-    Processor(const std::string& path);
+    Processor();
 
     virtual void displayImage(const std::string& title) const = 0;
 
@@ -28,16 +30,19 @@ public:
 
     virtual void displayWait() const =  0;
 
-    FileHandle * file;
+    virtual void createImageFromPath (const std::string& path) const = 0;
         
-    // Factory method to create ImageProcessor object based on OS
-    static Processor * create(const std::string& path);
+    static Processor * create();
 };
+
+
+
+
 
 #ifdef _OPENCV_PROC
 class OpenCVImageProcessor : public Processor {
 public:  
-    OpenCVImageProcessor(const std::string& path);
+    OpenCVImageProcessor();
     
     void displayImage(const std::string& title) const override;
 
@@ -48,6 +53,8 @@ public:
     void autoCropAndRotateImage() const override;
 
     std::string getImageSize() const override;
+
+    void createImageFromPath (const std::string& path) const override;
 
     void displayWait() const override;
 
@@ -65,7 +72,7 @@ protected:
 #else
 class CustoMmageProcessor : public Processor {
 public:
-    CustoMmageProcessor(const std::string& path):Processor(path){};
+    CustoMmageProcessor():Processor(){};
     
     void displayImage() const override;
 
@@ -74,6 +81,10 @@ public:
     void displayMetadata() const override;
 
     std::string getImageSize() const override;
+
+    void createImageFromPath (const std::string& path) const override;
+
+    void displayWait() const override;
 
 };
 

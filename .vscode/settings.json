@@ -89,6 +89,8 @@
         "filesystem": "cpp",
         "any": "cpp",
         "condition_variable": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "numeric": "cpp",
+        "random": "cpp"
     }
 }

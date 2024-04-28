@@ -1,10 +1,10 @@
 #pragma once
 #include "fileHandle.h"
-#include "processor.h"
+#include "processorAdapter.h"
 
-class MyImage{ 
+class MyImage: public ProcessorAdapter{ 
 public:
     MyImage (const std::string& path);
     
-    Processor *processor;
+
 };

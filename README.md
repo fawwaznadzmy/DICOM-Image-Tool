@@ -38,7 +38,8 @@ DicomImageTool.exe <path/of/image/>
 
 ## How to Setup, Compile and Run
 
-Checkout the git repository and install the following dependencies:
+Checkout the git repository and install the following dependencies in order to run it on Windows:
+
 ### Install CMAKE
 - Download [cmake](https://cmake.org/download/) for Windows  
 - During installation, in installation option select "Add CMake to the system PATH for all users"

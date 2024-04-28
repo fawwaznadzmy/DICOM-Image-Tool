@@ -30,6 +30,9 @@ This Application developed with C++ and it is setup using CMake. It is console a
 DicomImageTool.exe <path/of/image/to/be/loaded>
 ```
 ### Results
+<img src="./pictures/postprocess/original.png" height="50%">
+<img src="./pictures/postprocess/cropAndRotate.png" height="50%">
+<img src="./pictures/postprocess/histogram.png" height="50%">
 ![original!](pictures/postprocess/original.png)
 ![rotate!](pictures/postprocess/cropAndRotate.png)
 ![histogram!](pictures/postprocess/histogram.png)

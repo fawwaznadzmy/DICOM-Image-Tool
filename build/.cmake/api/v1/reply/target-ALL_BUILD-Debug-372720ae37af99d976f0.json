@@ -5,7 +5,7 @@
 		"commands" : [],
 		"files" : 
 		[
-			"build/_deps/googletest-src/CMakeLists.txt"
+			"CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -17,16 +17,25 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "gmock_main::@0f7bb11d64f3678238c7"
+			"id" : "dicom_lib::@5f5a17c01335469806cb"
 		},
 		{
-			"id" : "gtest_main::@1ea2dfc0605fe3ab2a3f"
+			"id" : "DicomImageTool::@5f5a17c01335469806cb"
+		},
+		{
+			"id" : "gmock_main::@0f7bb11d64f3678238c7"
 		},
 		{
 			"id" : "gmock::@0f7bb11d64f3678238c7"
 		},
 		{
+			"id" : "gtest_main::@1ea2dfc0605fe3ab2a3f"
+		},
+		{
 			"id" : "gtest::@1ea2dfc0605fe3ab2a3f"
+		},
+		{
+			"id" : "unit_test::@36f028580bb02cc8272a"
 		},
 		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
@@ -36,13 +45,13 @@
 	{
 		"name" : "CMakePredefinedTargets"
 	},
-	"id" : "ALL_BUILD::@f0697b77e45c2bae8283",
+	"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
 	"isGeneratorProvided" : true,
 	"name" : "ALL_BUILD",
 	"paths" : 
 	{
-		"build" : "_deps/googletest-build",
-		"source" : "build/_deps/googletest-src"
+		"build" : ".",
+		"source" : "."
 	},
 	"sources" : [],
 	"type" : "UTILITY"

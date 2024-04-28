@@ -10,7 +10,7 @@ ProcessorAdapter::ProcessorAdapter(const std::string& path){
             cout << "convert dcm to a format that can be process by processor";
        } 
        else if( (ext == "jpeg") || (ext == "png") || (ext == "tif") ){
-             processor->createImageFromPath(path); 
+            processor->createImageFromPath(path); 
        }
        else
             cout << "Unsupported file";

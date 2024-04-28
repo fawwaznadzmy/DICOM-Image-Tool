@@ -5,7 +5,7 @@
 		"commands" : [],
 		"files" : 
 		[
-			"build/_deps/googletest-src/googlemock/CMakeLists.txt"
+			"build/_deps/googletest-src/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -20,10 +20,10 @@
 			"id" : "gmock_main::@0f7bb11d64f3678238c7"
 		},
 		{
-			"id" : "gtest_main::@1ea2dfc0605fe3ab2a3f"
+			"id" : "gmock::@0f7bb11d64f3678238c7"
 		},
 		{
-			"id" : "gmock::@0f7bb11d64f3678238c7"
+			"id" : "gtest_main::@1ea2dfc0605fe3ab2a3f"
 		},
 		{
 			"id" : "gtest::@1ea2dfc0605fe3ab2a3f"
@@ -36,13 +36,13 @@
 	{
 		"name" : "CMakePredefinedTargets"
 	},
-	"id" : "ALL_BUILD::@0f7bb11d64f3678238c7",
+	"id" : "ALL_BUILD::@f0697b77e45c2bae8283",
 	"isGeneratorProvided" : true,
 	"name" : "ALL_BUILD",
 	"paths" : 
 	{
-		"build" : "_deps/googletest-build/googlemock",
-		"source" : "build/_deps/googletest-src/googlemock"
+		"build" : "_deps/googletest-build",
+		"source" : "build/_deps/googletest-src"
 	},
 	"sources" : [],
 	"type" : "UTILITY"

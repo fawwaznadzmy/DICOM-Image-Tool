@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "test/Debug/unit_test.exe"
+			"path" : "test/MinSizeRel/unit_test.exe"
 		},
 		{
-			"path" : "test/Debug/unit_test.pdb"
+			"path" : "test/MinSizeRel/unit_test.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -74,7 +74,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zi"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG -MD"
 				}
 			],
 			"includes" : 
@@ -103,7 +103,8 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				2
 			]
 		}
 	],
@@ -131,106 +132,106 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zi",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG -MD",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
+				"fragment" : "/machine:x64 /INCREMENTAL:NO /subsystem:console",
 				"role" : "flags"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "..\\app\\Debug\\dicom_lib.lib",
+				"fragment" : "..\\app\\MinSizeRel\\dicom_lib.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490d.lib",
+				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490d.lib",
+				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490d.lib",
+				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490d.lib",
+				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490d.lib",
+				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490d.lib",
+				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490d.lib",
+				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490d.lib",
+				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490d.lib",
+				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490d.lib",
+				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490d.lib",
+				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490d.lib",
+				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490d.lib",
+				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490d.lib",
+				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490d.lib",
+				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490d.lib",
+				"fragment" : "C:\\opencv\\build\\x64\\vc16\\lib\\opencv_world490.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "..\\lib\\Debug\\gtest_main.lib",
+				"fragment" : "..\\lib\\MinSizeRel\\gtest_main.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 5,
-				"fragment" : "..\\lib\\Debug\\gtest.lib",
+				"fragment" : "..\\lib\\MinSizeRel\\gtest.lib",
 				"role" : "libraries"
 			},
 			{
@@ -254,12 +255,19 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				2
 			]
 		}
 	],
 	"sources" : 
 	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "test/src/dicom_test.cpp",
+			"sourceGroupIndex" : 0
+		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,

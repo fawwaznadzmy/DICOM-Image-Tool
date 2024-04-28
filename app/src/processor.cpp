@@ -37,6 +37,8 @@ void OpenCVImageProcessor::displayImage(const std::string& title) const{
 }
 
 void OpenCVImageProcessor::displayHistogram() const{
+
+
    // Define histogram parameters
     int histSize = 256; // Number of bins
     float range[] = {0, 256}; // Pixel value range
@@ -50,7 +52,7 @@ void OpenCVImageProcessor::displayHistogram() const{
     int histWidth = 512;
     int histHeight = 400;
     int binWidth = cvRound((double)histWidth / histSize);
-    Mat histImage(histHeight, histWidth, CV_8UC3, Scalar(255, 255, 255));
+    Mat histImage(histHeight, histWidth, CV_8UC3, Scalar(0, 0, 0));
 
     // Normalize the histogram
     normalize(hist, hist, 0, histImage.rows, NORM_MINMAX, -1, Mat());
@@ -59,12 +61,12 @@ void OpenCVImageProcessor::displayHistogram() const{
     for (int i = 1; i < histSize; i++) {
         line(histImage, Point(binWidth * (i - 1), histHeight - cvRound(hist.at<float>(i - 1))),
             Point(binWidth * (i), histHeight - cvRound(hist.at<float>(i))),
-            Scalar(0, 0, 255), 2, LINE_AA);
+            Scalar(255, 255, 255), 2, LINE_AA);
     }
 
         // Draw axes
-    line(histImage, Point(0, histHeight), Point(histWidth, histHeight), Scalar(0, 0, 0), 2, LINE_AA); // X-axis
-    line(histImage, Point(0, histHeight), Point(0, 0), Scalar(0, 0, 0), 2, LINE_AA); // Y-axis
+    //line(histImage, Point(0, histHeight), Point(histWidth, histHeight), Scalar(0, 0, 0), 2, LINE_AA); // X-axis
+    //line(histImage, Point(0, histHeight), Point(0, 0), Scalar(0, 0, 0), 2, LINE_AA); // Y-axis
 
     // Display the histogram
     imshow("Histogram", histImage);

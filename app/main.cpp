@@ -3,6 +3,7 @@
 #include "thread.h"
 
 
+
 void printHelp() {
     std::cout << "Usage: image_processor [image_path]" << std::endl;
 }

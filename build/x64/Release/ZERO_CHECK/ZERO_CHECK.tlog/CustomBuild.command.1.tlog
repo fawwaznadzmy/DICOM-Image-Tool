@@ -1,0 +1,10 @@
+^D:\PROJECT\GIT\DICOM_V2\DICOM-IMAGE-TOOL\BUILD\CMAKEFILES\DE180066E10A0B2B31F6C9331AAFAED1\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Project/Git/DICOM_V2/DICOM-Image-Tool -BD:/Project/Git/DICOM_V2/DICOM-Image-Tool/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Project/Git/DICOM_V2/DICOM-Image-Tool/build/DicomProject.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

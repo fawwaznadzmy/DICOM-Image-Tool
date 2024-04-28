@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10.0)
+cmake_minimum_required(VERSION 3.29.0)
 project(DicomImageTool VERSION 0.1.0 LANGUAGES C CXX)
 
 #include(CTest)
@@ -12,16 +12,16 @@ endif()
 find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-#set(PYTHON_INCLUDE_DIRS ${PYTHON_INCLUDE_DIRS} C:/Users/fawwa/AppData/Local/Programs/Python/Python311/Lib/site-packages/numpy/core/include)
-#find_package(Python3 REQUIRED)
-#include_directories(${PYTHON_INCLUDE_DIRS})
-#include_directories("C:/Users/fawwa/AppData/Local/Programs/Python/Python311/Lib/site-packages/numpy/core/include")
-#include_directories("C:/Users/fawwa/AppData/Local/Programs/Python/Python311/include")
+
+#find_package(Python2 COMPONENTS Interpreter Development REQUIRED)
+#include_directories("C:/Python27/Lib/site-packages/numpy/core/include")
+#include_directories("C:/Python27/include")
+
 
 # search for DCMTK library and header files 
-#find_package(DCMTK REQUIRED)
-#link_directories("C:/Program Files/DCMTK/lib")
-#include_directories(${DCMTK_INCLUDE_DIRS})
+find_package(DCMTK REQUIRED)
+link_directories("C:/Program Files/DCMTK/lib")
+include_directories(${DCMTK_INCLUDE_DIRS})
 
 #find_package(ZLIB REQUIRED)
 
@@ -37,8 +37,10 @@ target_include_directories( ${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/i
 target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS} )
 target_link_libraries( ${PROJECT_NAME} ${wxWidgets_LIBRARIES})
 target_link_libraries( ${PROJECT_NAME} dicom_lib)
-#target_link_libraries( ${PROJECT_NAME} ${DCMTK_LIBRARIES})
-
+#target_link_libraries( ${PROJECT_NAME} ${Python2_LIBRARIES})
+#link_directories("C:/Python27/libs")
+target_link_libraries( ${PROJECT_NAME} ${DCMTK_LIBRARIES})
+variable_watch(${DCMTK_LIBRARIES})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

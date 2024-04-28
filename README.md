@@ -20,6 +20,20 @@ Requirements:
 
 - [x] Write unit test (TDD/BDD)
 
+## Description
+
+This Application developed with C++ and it is setup using CMake. It is console application that can be compiled and run in Windows and Linux. The application will crop, auto rotate and display the given image file `(.jpeg, tiff or .png)` and the histogram.
+
+### How to run
+
+```
+DicomImageTool.exe <path/of/image/to/be/loaded>
+```
+### Results
+![original!](pictures/postprocess/original.png)
+![rotate!](pictures/postprocess/cropAndRotate.png)
+![histogram!](pictures/postprocess/histogram.png)
+
 ## How to Setup, Compile and Run
 ### Installing CMAKE
 
@@ -27,7 +41,7 @@ Requirements:
 - During installation, in installation option select "Add CMake to the system PATH for all users"
 
 ### Installing VS C++ Complier
-- Install visual studio msvc 2017 [compiler] (https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSFeaturesPage&passive=false&cid=2030)
+- Install visual studio msvc 2017 [compiler](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSFeaturesPage&passive=false&cid=2030)
 
 ### Setting up project in VS code
 Install the Visual Studio extensions:
@@ -45,8 +59,8 @@ Follow this setup using these steps:
 
 ### DICOM DCMTK Library
 
-- Download here https://dicom.offis.de/en/dcmtk/dcmtk-software-development/
-- Configure here https://support.dcmtk.org/redmine/projects/dcmtk/wiki/howto_cmakeconfiguration
+- Download [here](https://dicom.offis.de/en/dcmtk/dcmtk-software-development/)
+- Configure [here](https://support.dcmtk.org/redmine/projects/dcmtk/wiki/howto_cmakeconfiguration)
 
 
 

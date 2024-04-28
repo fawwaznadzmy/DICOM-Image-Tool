@@ -303,6 +303,9 @@ CTEST_SUBMIT_RETRY_COUNT:STRING=3
 //How long to wait between timed-out CTest submissions.
 CTEST_SUBMIT_RETRY_DELAY:STRING=5
 
+//Path to a program.
+CYGWIN_BAT:FILEPATH=CYGWIN_BAT-NOTFOUND
+
 //Maximum time allowed before CTest will kill the test.
 DART_TESTING_TIMEOUT:STRING=1500
 
@@ -353,6 +356,9 @@ GITCOMMAND:FILEPATH=C:/Program Files/Git/cmd/git.exe
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=C:/Program Files/Git/cmd/git.exe
 
+//Path to a program.
+GNUPLOT_EXECUTABLE:FILEPATH=GNUPLOT_EXECUTABLE-NOTFOUND
+
 //Use Abseil and RE2. Requires Abseil and RE2 to be separately
 // added to the build.
 GTEST_HAS_ABSL:BOOL=OFF
@@ -369,6 +375,9 @@ MEMORYCHECK_COMMAND:FILEPATH=MEMORYCHECK_COMMAND-NOTFOUND
 
 //File that contains suppressions for the memory checker
 MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
+
+//Path to a program.
+MSYS_CMD:FILEPATH=C:/msys64/msys2_shell.cmd
 
 //The directory containing a CMake configuration file for NumPy.
 NumPy_DIR:PATH=NumPy_DIR-NOTFOUND
@@ -831,6 +840,8 @@ CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
 CTEST_SUBMIT_RETRY_COUNT-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CTEST_SUBMIT_RETRY_DELAY
 CTEST_SUBMIT_RETRY_DELAY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CYGWIN_BAT
+CYGWIN_BAT-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DART_TESTING_TIMEOUT
 DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
 //Details about finding OpenCV
@@ -839,8 +850,10 @@ FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[C:/opencv/build][v4.9.0()]
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[C:/msys64/ucrt64/bin/pkg-config.exe][v2.1.0()]
 //Details about finding Python
 FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[C:/Users/fawwa/AppData/Local/Programs/Python/Python311/python.exe][cfound components: Interpreter ][v3.11.4()]
+//Details about finding Python2
+FIND_PACKAGE_MESSAGE_DETAILS_Python2:INTERNAL=[C:/Python27/python.exe][C:/Python27/libs/python27.lib][C:/Python27/include][cfound components: Interpreter Development Development.Module Development.Embed ][v2.7.18()]
 //Details about finding Python3
-FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[C:/Users/fawwa/AppData/Local/Programs/Python/Python311/python.exe][cfound components: Interpreter ][v3.11.4()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[C:/Users/fawwa/AppData/Local/Programs/Python/Python311/python.exe][C:/Users/fawwa/AppData/Local/Programs/Python/Python311/libs/python311.lib][C:/Users/fawwa/AppData/Local/Programs/Python/Python311/include][cfound components: Interpreter Development Development.Module Development.Embed ][v3.11.4()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[C:/Users/fawwa/AppData/Local/Programs/Python/Python311/python.exe][v3.11.4()]
 //Details about finding PythonLibs
@@ -859,6 +872,8 @@ MAKECOMMAND-ADVANCED:INTERNAL=1
 MEMORYCHECK_COMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MEMORYCHECK_SUPPRESSIONS_FILE
 MEMORYCHECK_SUPPRESSIONS_FILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MSYS_CMD
+MSYS_CMD-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_ARGN
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
@@ -996,9 +1011,32 @@ ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files/DicomProject
 //Compiler reason failure
+_Python2_Compiler_REASON_FAILURE:INTERNAL=
+_Python2_DEVELOPMENT_EMBED_SIGNATURE:INTERNAL=a92e6229b7f8172bffb751d547735f6b
+_Python2_DEVELOPMENT_MODULE_SIGNATURE:INTERNAL=a92e6229b7f8172bffb751d547735f6b
+//Development reason failure
+_Python2_Development_REASON_FAILURE:INTERNAL=
+//Path to a program.
+_Python2_EXECUTABLE:INTERNAL=C:/Python27/python.exe
+//Path to a file.
+_Python2_INCLUDE_DIR:INTERNAL=C:/Python27/include
+//Python2 Properties
+_Python2_INTERPRETER_PROPERTIES:INTERNAL=Python;2;7;18;64;;;;C:\Python27\Lib;C:\Python27\Lib;C:\Python27\Lib\site-packages;C:\Python27\Lib\site-packages
+_Python2_INTERPRETER_SIGNATURE:INTERNAL=6c5b686ef3ffdaf8f7e64be556ec0d78
+//Interpreter reason failure
+_Python2_Interpreter_REASON_FAILURE:INTERNAL=
+//Path to a library.
+_Python2_LIBRARY_DEBUG:INTERNAL=_Python2_LIBRARY_DEBUG-NOTFOUND
+//Path to a library.
+_Python2_LIBRARY_RELEASE:INTERNAL=C:/Python27/libs/python27.lib
+//NumPy reason failure
+_Python2_NumPy_REASON_FAILURE:INTERNAL=
+//Path to a library.
+_Python2_RUNTIME_LIBRARY_RELEASE:INTERNAL=C:/Windows/System32/python27.dll
+//Compiler reason failure
 _Python3_Compiler_REASON_FAILURE:INTERNAL=
-_Python3_DEVELOPMENT_EMBED_SIGNATURE:INTERNAL=e27c567a69cd8cd58a6f1744bc5f6f5c
-_Python3_DEVELOPMENT_MODULE_SIGNATURE:INTERNAL=e27c567a69cd8cd58a6f1744bc5f6f5c
+_Python3_DEVELOPMENT_EMBED_SIGNATURE:INTERNAL=fb5700208434d05733073614e1dafea6
+_Python3_DEVELOPMENT_MODULE_SIGNATURE:INTERNAL=fb5700208434d05733073614e1dafea6
 //Development reason failure
 _Python3_Development_REASON_FAILURE:INTERNAL=
 //Path to a program.
@@ -1007,7 +1045,7 @@ _Python3_EXECUTABLE:INTERNAL=C:/Users/fawwa/AppData/Local/Programs/Python/Python
 _Python3_INCLUDE_DIR:INTERNAL=C:/Users/fawwa/AppData/Local/Programs/Python/Python311/include
 //Python3 Properties
 _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;4;64;;cp311-win_amd64;;C:\Users\fawwa\AppData\Local\Programs\Python\Python311\Lib;C:\Users\fawwa\AppData\Local\Programs\Python\Python311\Lib;C:\Users\fawwa\AppData\Local\Programs\Python\Python311\Lib\site-packages;C:\Users\fawwa\AppData\Local\Programs\Python\Python311\Lib\site-packages
-_Python3_INTERPRETER_SIGNATURE:INTERNAL=252e57f413ab487468dc5415209c5d8c
+_Python3_INTERPRETER_SIGNATURE:INTERNAL=98eacf44a2da2b46c54e2ebb06f9bf6b
 //Interpreter reason failure
 _Python3_Interpreter_REASON_FAILURE:INTERNAL=
 //Path to a library.
@@ -1021,15 +1059,21 @@ _Python3_NumPy_INCLUDE_DIR:INTERNAL=C:/Users/fawwa/AppData/Local/Programs/Python
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
 //Path to a library.
 _Python3_RUNTIME_LIBRARY_RELEASE:INTERNAL=C:/Users/fawwa/AppData/Local/Programs/Python/Python311/python311.dll
+//Path to a program.
+_Python_CONFIG:INTERNAL=_Python_CONFIG-NOTFOUND
 //Compiler reason failure
 _Python_Compiler_REASON_FAILURE:INTERNAL=
 //Development reason failure
 _Python_Development_REASON_FAILURE:INTERNAL=
 //Path to a program.
 _Python_EXECUTABLE:INTERNAL=C:/Users/fawwa/AppData/Local/Programs/Python/Python311/python.exe
+//Path to a file.
+_Python_INCLUDE_DIR:INTERNAL=_Python_INCLUDE_DIR-NOTFOUND
 //Python Properties
 _Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;4;64;32;;cp311-win_amd64;;C:\Users\fawwa\AppData\Local\Programs\Python\Python311\Lib;C:\Users\fawwa\AppData\Local\Programs\Python\Python311\Lib;C:\Users\fawwa\AppData\Local\Programs\Python\Python311\Lib\site-packages;C:\Users\fawwa\AppData\Local\Programs\Python\Python311\Lib\site-packages
 _Python_INTERPRETER_SIGNATURE:INTERNAL=98eacf44a2da2b46c54e2ebb06f9bf6b
+//Path to a library.
+_Python_LIBRARY_RELEASE:INTERNAL=_Python_LIBRARY_RELEASE-NOTFOUND
 //NumPy reason failure
 _Python_NumPy_REASON_FAILURE:INTERNAL=
 cmake_package_name:INTERNAL=GTest

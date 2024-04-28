@@ -7,6 +7,7 @@ C:/Program Files/CMake/share/cmake-3.29/Modules/CPackComponent.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/Compiler/MSVC-C.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/Compiler/MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/FindDCMTK.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/FindPackageMessage.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/FindwxWidgets.cmake
@@ -14,6 +15,10 @@ C:/Program Files/CMake/share/cmake-3.29/Modules/Platform/Windows-MSVC-C.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/Platform/Windows-MSVC.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/UsewxWidgets.cmake
 C:/Program Files/CMake/share/cmake-3.29/Templates/CPackConfig.cmake.in
+C:/Program Files/DCMTK/cmake/DCMTKConfig.cmake
+C:/Program Files/DCMTK/cmake/DCMTKConfigVersion.cmake
+C:/Program Files/DCMTK/cmake/DCMTKTargets-debug.cmake
+C:/Program Files/DCMTK/cmake/DCMTKTargets.cmake
 C:/opencv/build/x64/vc16/lib/OpenCVConfig-version.cmake
 C:/opencv/build/x64/vc16/lib/OpenCVConfig.cmake
 C:/opencv/build/x64/vc16/lib/OpenCVModules-debug.cmake

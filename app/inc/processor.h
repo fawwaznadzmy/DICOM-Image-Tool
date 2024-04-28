@@ -7,6 +7,7 @@
 #ifdef _OPENCV_PROC
 #include <opencv2/opencv.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui.hpp>
 using namespace cv;
 #endif
 using namespace std;

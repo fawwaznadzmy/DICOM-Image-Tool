@@ -15,13 +15,17 @@ class Processor {
 public:
     Processor(const std::string& path);
 
-    virtual void displayImage() const = 0;
+    virtual void displayImage(const std::string& title) const = 0;
 
     virtual void displayHistogram() const= 0;
 
     virtual void displayMetadata() const = 0;
 
+    virtual void autoCropAndRotateImage() const =0;
+
     virtual std::string getImageSize() const =0 ;
+
+    virtual void displayWait() const =  0;
 
     FileHandle * file;
         
@@ -34,22 +38,27 @@ class OpenCVImageProcessor : public Processor {
 public:  
     OpenCVImageProcessor(const std::string& path);
     
-    void displayImage() const override;
+    void displayImage(const std::string& title) const override;
 
     void displayHistogram() const override;
 
     void displayMetadata() const override;
 
+    void autoCropAndRotateImage() const override;
+
     std::string getImageSize() const override;
 
+    void displayWait() const override;
+
 private:
-    Mat processAndCropImage(const Mat& src);
+    Mat processAndCropImage(const Mat& src) const;
 
-    Point markingLocation(const Mat& src);
+    Point markingLocation(const Mat& src) const;
 
-    bool isImageNeedToRotate(const Mat& src, Point pnt);
+    bool isImageNeedToRotate(const Mat& src, Point pnt) const;
 
-    Mat m_Image;
+protected:
+    Mat* m_Image;
 };
 
 #else

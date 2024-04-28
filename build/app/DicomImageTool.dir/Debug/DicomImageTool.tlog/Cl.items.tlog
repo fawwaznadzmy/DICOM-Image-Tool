@@ -1,6 +1,6 @@
 D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\main.cpp;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\app\DicomImageTool.dir\Debug\main.obj
 D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\dicomReader.cpp;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\app\DicomImageTool.dir\Debug\dicomReader.obj
 D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\fileHandle.cpp;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\app\DicomImageTool.dir\Debug\fileHandle.obj
-D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\image.cpp;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\app\DicomImageTool.dir\Debug\image.obj
+D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\myImage.cpp;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\app\DicomImageTool.dir\Debug\myImage.obj
 D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\processor.cpp;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\app\DicomImageTool.dir\Debug\processor.obj
 D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\thread.cpp;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\app\DicomImageTool.dir\Debug\thread.obj

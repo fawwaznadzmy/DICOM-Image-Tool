@@ -18,49 +18,35 @@ Requirements:
 - [ ] Read and display DICOM metadata of the DICOM file from local storage
 - [ ] Perform some basic image processing technique to enhance the details of the existing DICOM image
 
-- [ ] Write unit test (TDD/BDD)
+- [x] Write unit test (TDD/BDD)
 
 ## How to Setup, Compile and Run
 ### Installing CMAKE
 
-- download cmake here for Windows  https://cmake.org/download/
-- for installation option select "Add CMake to the system PATH for all users"
+- Download [cmake](https://cmake.org/download/) for Windows  
+- During installation, in installation option select "Add CMake to the system PATH for all users"
 
-- Installing MinGW to build C++ Code https://code.visualstudio.com/docs/cpp/config-mingw#_prerequisites
-- Installing make with command 'winget install ezwinports.make' or can install ttps://chocolatey.org/install then type choco install make
+### Installing VS C++ Complier
+- Install visual studio msvc 2017 [compiler] (https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSFeaturesPage&passive=false&cid=2030)
 
-## Setting up project in VS code
-- CMake Tool Extension (https://code.visualstudio.com/docs/cpp/cmake-linux)
+### Setting up project in VS code
+Install the Visual Studio extensions:
+- CMake Tool Extension [here](https://code.visualstudio.com/docs/cpp/cmake-linux)
 - C++ Extension
-- Makefile Tool Extension
-- Open command [SHIFT] + [CTRL] + [P] 
 
-### Setting up wxWidget
-
-https://docs.wxwidgets.org/latest/overview_cmake.html
+Follow this setup using these steps:
+- Create a folder and open it with Visual Studio
+- Configure CMake by Opening command [SHIFT] + [CTRL] + [P] `CMake:Configure`
+- Choose the project name and compiler
+- Create CMake file `CMakelists.txt` and settings up with command `CMake:Quick Start`
 
 ### Setting up Open CV
-- Download open CV here and extract it. Copy the folder to C:\ drive 
-- Add into environment variable path
-    1. C:\opencv\build\x64\vc16\bin
-    2. C:\opencv\build\x64\vc16\lib
-
-### MSBuild.exe
-
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin
-MSBuild.exe build/vs/DicomImageTool.vcxproj
+- Download open CV [here](https://opencv.org/releases/) and extract it.
 
 ### DICOM DCMTK Library
 
-- Download here https://dicom.offis.de/en/dcmtk/dcmtk-tools/
-https://dicom.offis.de/dcmtk.php.en
-https://dicom.offis.de/en/dcmtk/dcmtk-software-development/
-
-https://support.dcmtk.org/redmine/projects/dcmtk/wiki/howto_cmakeconfiguration
-- C:\dcmtk-3.6.8-win64-dynamic\bin
+- Download here https://dicom.offis.de/en/dcmtk/dcmtk-software-development/
+- Configure here https://support.dcmtk.org/redmine/projects/dcmtk/wiki/howto_cmakeconfiguration
 
 
-,,,
-cmake -G "MinGW Makefiles" -S . -B out/build
-,,,
 

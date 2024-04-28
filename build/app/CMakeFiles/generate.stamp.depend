@@ -1,7 +1,4 @@
 # CMake generation dependency list for this directory.
-C:/DCMTK/build/DCMTKConfig.cmake
-C:/DCMTK/build/DCMTKConfigVersion.cmake
-C:/DCMTK/build/DCMTKTargets.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeCInformation.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake
@@ -10,7 +7,6 @@ C:/Program Files/CMake/share/cmake-3.29/Modules/CPackComponent.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/Compiler/MSVC-C.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/Compiler/MSVC.cmake
-C:/Program Files/CMake/share/cmake-3.29/Modules/FindDCMTK.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/FindPackageMessage.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/FindwxWidgets.cmake

@@ -17,36 +17,23 @@ Processor* Processor::create(const std::string& path) {
 OpenCVImageProcessor::OpenCVImageProcessor(const std::string& path): Processor(path)
 {
     std::string ext = file->getFileExtension();
-
-    if(ext == ".dcm"){
-        //convert o JPEG
+;
+    if(ext == "dcm"){
 
     }
 
-    // for .dcm need to do something
-    //
-   
-    Mat img = imread(path,IMREAD_GRAYSCALE);
+    m_Image = new cv::Mat;
 
-    if (img.empty()) {
+    *m_Image = imread(path,IMREAD_GRAYSCALE);
+
+    if (m_Image->empty()) {
         std::cerr << "Error: Unable to load image " << path << std::endl;
-        return;
-    }
-
-    Mat processedImg = processAndCropImage(img);
-
-    Point mark = markingLocation(processedImg);
-
-    m_Image = processedImg ;
-    if(isImageNeedToRotate(processedImg, mark ))
-    {
-       rotate(processedImg, m_Image, ROTATE_180);
-    }          
+    }      
 }
     
-void OpenCVImageProcessor::displayImage() const{
-    imshow("Result", m_Image);
-    waitKey(0);
+void OpenCVImageProcessor::displayImage(const std::string& title) const{
+    imshow(title, *m_Image);
+   // waitKey(0);
 }
 
 void OpenCVImageProcessor::displayHistogram() const{
@@ -57,7 +44,7 @@ void OpenCVImageProcessor::displayHistogram() const{
 
     // Compute histogram
     Mat hist;
-    calcHist(&m_Image, 1, 0, Mat(), hist, 1, &histSize, &histRange);
+    calcHist(m_Image, 1, 0, Mat(), hist, 1, &histSize, &histRange);
 
     // Set histogram plot parameters
     int histWidth = 512;
@@ -81,12 +68,30 @@ void OpenCVImageProcessor::displayHistogram() const{
 
     // Display the histogram
     imshow("Histogram", histImage);
-    waitKey(0);
 
 }
 
 void OpenCVImageProcessor::displayMetadata() const{
 
+}
+
+void OpenCVImageProcessor::displayWait() const{
+   waitKey(0);
+}
+
+void OpenCVImageProcessor::autoCropAndRotateImage() const{
+
+    Mat img = *m_Image;
+
+    const Mat processedImg = processAndCropImage(img);
+    const Point mark = markingLocation(processedImg);
+
+    if(isImageNeedToRotate(processedImg, mark ))
+    {
+       rotate(processedImg, img, ROTATE_180);
+    }  
+
+    *m_Image = img;
 }
 
 std::string OpenCVImageProcessor::getImageSize() const{
@@ -95,7 +100,7 @@ std::string OpenCVImageProcessor::getImageSize() const{
 }
 
 
-Mat OpenCVImageProcessor::processAndCropImage(const Mat& src) {
+Mat OpenCVImageProcessor::processAndCropImage(const Mat& src) const{
    
     Mat gray = src.clone();
 
@@ -146,8 +151,7 @@ Mat OpenCVImageProcessor::processAndCropImage(const Mat& src) {
 }
 
 
-Point OpenCVImageProcessor::markingLocation(const Mat& src)
-{
+Point OpenCVImageProcessor::markingLocation(const Mat& src) const {
 
     Mat binary;
     double minArea = DBL_MAX;
@@ -181,8 +185,7 @@ Point OpenCVImageProcessor::markingLocation(const Mat& src)
 }
 
 
-bool OpenCVImageProcessor::isImageNeedToRotate(const Mat& src, Point pnt)
-{
+bool OpenCVImageProcessor::isImageNeedToRotate(const Mat& src, Point pnt)const {
     if (pnt.x > src.cols / 2 && pnt.y > src.rows / 2) {
         return true;
     }

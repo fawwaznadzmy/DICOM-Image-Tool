@@ -8,6 +8,9 @@ void printHelp() {
 }
 
 int main(int argc, char* argv[]) {
+
+
+
     if (argc != 2) {
         printHelp();
         return 1;

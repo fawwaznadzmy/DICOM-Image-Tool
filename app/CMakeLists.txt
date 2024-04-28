@@ -12,9 +12,18 @@ endif()
 find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
+#set(PYTHON_INCLUDE_DIRS ${PYTHON_INCLUDE_DIRS} C:/Users/fawwa/AppData/Local/Programs/Python/Python311/Lib/site-packages/numpy/core/include)
+#find_package(Python3 REQUIRED)
+#include_directories(${PYTHON_INCLUDE_DIRS})
+#include_directories("C:/Users/fawwa/AppData/Local/Programs/Python/Python311/Lib/site-packages/numpy/core/include")
+#include_directories("C:/Users/fawwa/AppData/Local/Programs/Python/Python311/include")
+
 # search for DCMTK library and header files 
-find_package(DCMTK REQUIRED)
-include_directories(${DCMTK_INCLUDE_DIRS})
+#find_package(DCMTK REQUIRED)
+#link_directories("C:/Program Files/DCMTK/lib")
+#include_directories(${DCMTK_INCLUDE_DIRS})
+
+#find_package(ZLIB REQUIRED)
 
 file(GLOB_RECURSE SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
 file(GLOB_RECURSE INC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/inc/*.h)
@@ -23,7 +32,7 @@ include_directories(inc)
 add_library(dicom_lib ${SRC_FILES} ${INC_FILES})
 add_executable(${PROJECT_NAME} main.cpp ${SRC_FILES} ${INC_FILES})
 
-target_include_directories( ${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inc )
+target_include_directories( ${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inc)
 
 target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS} )
 target_link_libraries( ${PROJECT_NAME} ${wxWidgets_LIBRARIES})

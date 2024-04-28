@@ -1,6 +1,6 @@
 #pragma once
 
-#include "image.h";
+#include "myImage.h"
 
 class MyThread{
 public:
@@ -9,5 +9,5 @@ public:
     void worker();
 
 private:
-    Image* image;
+    MyImage* image;
 };

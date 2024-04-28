@@ -86,6 +86,9 @@
         "cinttypes": "cpp",
         "cstdarg": "cpp",
         "strstream": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "any": "cpp",
+        "condition_variable": "cpp",
+        "variant": "cpp"
     }
 }

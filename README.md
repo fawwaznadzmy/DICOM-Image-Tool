@@ -30,16 +30,14 @@ This Application developed with C++ and it is setup using CMake. It is console a
 DicomImageTool.exe <path/of/image/to/be/loaded>
 ```
 ### Results
-<img src="pictures/postprocess/original.png" height="50%">
-<img src="pictures/postprocess/cropAndRotate.png" height="50%">
-<img src="pictures/postprocess/histogram.png" height="50%">
 ![original!](pictures/postprocess/original.png)
 ![rotate!](pictures/postprocess/cropAndRotate.png)
 ![histogram!](pictures/postprocess/histogram.png)
 
 ## How to Setup, Compile and Run
-### Installing CMAKE
 
+Checkout the git repository and install the following dependencies:
+### Installing CMAKE
 - Download [cmake](https://cmake.org/download/) for Windows  
 - During installation, in installation option select "Add CMake to the system PATH for all users"
 
@@ -60,10 +58,23 @@ Follow this setup using these steps:
 ### Setting up Open CV
 - Download open CV [here](https://opencv.org/releases/) and extract it.
 
-### DICOM DCMTK Library
+### Installing DICOM DCMTK Library
+- Get the download source [here](https://dicom.offis.de/en/dcmtk/dcmtk-software-development/)
+- Complie and install the library with instruction [here](https://support.dcmtk.org/redmine/projects/dcmtk/wiki/howto_cmakeconfiguration)
 
-- Download [here](https://dicom.offis.de/en/dcmtk/dcmtk-software-development/)
-- Configure [here](https://support.dcmtk.org/redmine/projects/dcmtk/wiki/howto_cmakeconfiguration)
+## Compile, build and run the test
 
+Add root directory, use commands below to compile, build or run the unit test
+```
+cmake -S . -B build  
+```
+
+```
+MSBuild.exe build/DicomImageTool.vcxproj 
+```
+
+```
+ctest --test-dir build --output-on-failure -j12
+```
 
 

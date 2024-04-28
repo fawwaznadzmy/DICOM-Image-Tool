@@ -22,12 +22,14 @@ Requirements:
 
 ## Description
 
-This Application developed with C++ and it is setup using CMake. It is console application that can be compiled and run in Windows and Linux. The application will crop, auto rotate and display the given image file `(.jpeg, tiff or .png)` and the histogram.
+This Application developed with C++ and the setup was done using CMake. It is  `a console application` that can be compiled and run in `Windows and Linux`. Once run, the application will crop, auto rotate and display the given image file `(.jpeg, tiff or .png)` and the histogram.
 
 ### How to run
 
+Example, for Windows application, type command line below to launch the application:
+
 ```
-DicomImageTool.exe <path/of/image/to/be/loaded>
+DicomImageTool.exe <path/of/image/>
 ```
 ### Results
 ![original!](pictures/postprocess/original.png)
@@ -37,34 +39,21 @@ DicomImageTool.exe <path/of/image/to/be/loaded>
 ## How to Setup, Compile and Run
 
 Checkout the git repository and install the following dependencies:
-### Installing CMAKE
+### Install CMAKE
 - Download [cmake](https://cmake.org/download/) for Windows  
 - During installation, in installation option select "Add CMake to the system PATH for all users"
 
-### Installing VS C++ Complier
+### Install VS C++ Complier
 - Install visual studio msvc 2017 [compiler](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSFeaturesPage&passive=false&cid=2030)
 
-### Setting up project in VS code
-Install the Visual Studio extensions:
-- CMake Tool Extension [here](https://code.visualstudio.com/docs/cpp/cmake-linux)
-- C++ Extension
-
-Follow this setup using these steps:
-- Create a folder and open it with Visual Studio
-- Configure CMake by Opening command [SHIFT] + [CTRL] + [P] `CMake:Configure`
-- Choose the project name and compiler
-- Create CMake file `CMakelists.txt` and settings up with command `CMake:Quick Start`
-
 ### Setting up Open CV
-- Download open CV [here](https://opencv.org/releases/) and extract it.
+- Download open CV source files [here](https://opencv.org/releases/) 
+- Extract the folder to specific location `(e.g C:/OpenCv)`
 
-### Installing DICOM DCMTK Library
-- Get the download source [here](https://dicom.offis.de/en/dcmtk/dcmtk-software-development/)
-- Complie and install the library with instruction [here](https://support.dcmtk.org/redmine/projects/dcmtk/wiki/howto_cmakeconfiguration)
 
 ## Compile, build and run the test
 
-Add root directory, use commands below to compile, build or run the unit test
+After checking out the repository, use commands below to compile, build or run the unit test
 ```
 cmake -S . -B build  
 ```

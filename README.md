@@ -51,6 +51,10 @@ Checkout the git repository and install the following dependencies in order to r
 - Download open CV source files [here](https://opencv.org/releases/) 
 - Extract the folder to specific location `(e.g C:/OpenCv)`
 
+### Install DICOM DCMTK Library
+- Get the download source [here](https://dicom.offis.de/en/dcmtk/dcmtk-software-development/)
+- Complie and install the library with instruction [here](https://support.dcmtk.org/redmine/projects/dcmtk/wiki/howto_cmakeconfiguration)
+
 
 ## Compile, build and run the test
 

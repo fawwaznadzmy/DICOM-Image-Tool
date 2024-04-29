@@ -31,6 +31,8 @@ public:
     virtual void displayWait() const =  0;
 
     virtual void createImageFromPath (const std::string& path) const = 0;
+
+    virtual void createImageFromPixel(int rows, int cols, uint8_t pixel) const = 0;
         
     static Processor * create();
 };
@@ -55,6 +57,8 @@ public:
     std::string getImageSize() const override;
 
     void createImageFromPath (const std::string& path) const override;
+
+    void createImageFromPixel(int rows, int cols, uint8_t pixel) const override;
 
     void displayWait() const override;
 

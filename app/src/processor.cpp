@@ -27,6 +27,13 @@ void OpenCVImageProcessor::createImageFromPath (const std::string& path) const{
         std::cerr << "Error: Unable to load image " << path << std::endl;
     }   
 }
+
+void OpenCVImageProcessor::createImageFromPixel(int rows, int cols, uint8_t pixel) const{
+
+     Mat image(rows, cols, CV_8UC1, pixel); 
+     *m_Image = image;
+
+}
     
 void OpenCVImageProcessor::displayImage(const std::string& title) const{
     imshow(title, *m_Image);
@@ -60,6 +67,8 @@ void OpenCVImageProcessor::displayHistogram() const{
     imshow("Histogram", histImage);
 
 }
+
+
 
 void OpenCVImageProcessor::displayMetadata() const{
 

@@ -17,7 +17,6 @@ public:
    
     void displayWait(){ processor->displayWait();}
 private:
-
     FileHandle *file;
     Processor* processor;
     DicomReader *dicom;

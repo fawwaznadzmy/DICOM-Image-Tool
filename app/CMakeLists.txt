@@ -18,19 +18,27 @@ include_directories( ${OpenCV_INCLUDE_DIRS} )
 #include_directories("C:/Python27/include")
 
 
-# search for DCMTK library and header files 
+# search for DCMTK library and header files
+SET(DCMTK_DIR "C:/Program Files/DCMTK") 
 find_package(DCMTK REQUIRED)
-link_directories("C:/Program Files/DCMTK/lib")
-include_directories(${DCMTK_INCLUDE_DIRS})
 
+link_directories("C:/Program Files/DCMTK/lib")
 #find_package(ZLIB REQUIRED)
 
-file(GLOB_RECURSE SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
-file(GLOB_RECURSE INC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/inc/*.h)
+#file(GLOB_RECURSE SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
+#file(GLOB_RECURSE INC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/inc/*.h)
 include_directories(inc)
 
-add_library(dicom_lib ${SRC_FILES} ${INC_FILES})
-add_executable(${PROJECT_NAME} main.cpp ${SRC_FILES} ${INC_FILES})
+add_library(dicom_lib 
+   src/fileHandle.cpp src/myImage.cpp src/thread.cpp src/processor.cpp src/processorAdapter.cpp src/dicom.cpp
+   inc/fileHandle.h inc/myImage.h inc/thread.h inc/processor.h inc/processorAdapter.h inc/dicom.h
+   )
+
+add_executable(${PROJECT_NAME} main.cpp )
+
+# Use the INCLUDE_DIRS variable populated by the DCMTK find module.
+INCLUDE_DIRECTORIES(${DCMTK_INCLUDE_DIRS})
+
 
 target_include_directories( ${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inc)
 

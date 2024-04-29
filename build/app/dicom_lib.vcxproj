@@ -78,7 +78,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\opencv\build\include;C:\Program Files\DCMTK\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\Program Files\DCMTK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/wxWidgets-3.2.4/lib/vc_x64_lib/mswud" /external:I "C:/wxWidgets-3.2.4/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -98,10 +98,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;UNICODE;_UNICODE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\opencv\build\include;C:\Program Files\DCMTK\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\wxWidgets-3.2.4\lib\vc_x64_lib\mswud;C:\wxWidgets-3.2.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\Program Files\DCMTK\include;C:\wxWidgets-3.2.4\lib\vc_x64_lib\mswud;C:\wxWidgets-3.2.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\opencv\build\include;C:\Program Files\DCMTK\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\wxWidgets-3.2.4\lib\vc_x64_lib\mswud;C:\wxWidgets-3.2.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\Program Files\DCMTK\include;C:\wxWidgets-3.2.4\lib\vc_x64_lib\mswud;C:\wxWidgets-3.2.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -114,7 +114,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\opencv\build\include;C:\Program Files\DCMTK\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\Program Files\DCMTK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/wxWidgets-3.2.4/lib/vc_x64_lib/mswud" /external:I "C:/wxWidgets-3.2.4/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -134,10 +134,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;UNICODE;_UNICODE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\opencv\build\include;C:\Program Files\DCMTK\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\wxWidgets-3.2.4\lib\vc_x64_lib\mswud;C:\wxWidgets-3.2.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\Program Files\DCMTK\include;C:\wxWidgets-3.2.4\lib\vc_x64_lib\mswud;C:\wxWidgets-3.2.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\opencv\build\include;C:\Program Files\DCMTK\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\wxWidgets-3.2.4\lib\vc_x64_lib\mswud;C:\wxWidgets-3.2.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\Program Files\DCMTK\include;C:\wxWidgets-3.2.4\lib\vc_x64_lib\mswud;C:\wxWidgets-3.2.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -150,7 +150,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\opencv\build\include;C:\Program Files\DCMTK\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\Program Files\DCMTK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/wxWidgets-3.2.4/lib/vc_x64_lib/mswud" /external:I "C:/wxWidgets-3.2.4/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -170,10 +170,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;UNICODE;_UNICODE;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\opencv\build\include;C:\Program Files\DCMTK\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\wxWidgets-3.2.4\lib\vc_x64_lib\mswud;C:\wxWidgets-3.2.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\Program Files\DCMTK\include;C:\wxWidgets-3.2.4\lib\vc_x64_lib\mswud;C:\wxWidgets-3.2.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\opencv\build\include;C:\Program Files\DCMTK\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\wxWidgets-3.2.4\lib\vc_x64_lib\mswud;C:\wxWidgets-3.2.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\Program Files\DCMTK\include;C:\wxWidgets-3.2.4\lib\vc_x64_lib\mswud;C:\wxWidgets-3.2.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -186,7 +186,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\opencv\build\include;C:\Program Files\DCMTK\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\Program Files\DCMTK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/wxWidgets-3.2.4/lib/vc_x64_lib/mswud" /external:I "C:/wxWidgets-3.2.4/include"</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -205,10 +205,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;UNICODE;_UNICODE;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\opencv\build\include;C:\Program Files\DCMTK\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\wxWidgets-3.2.4\lib\vc_x64_lib\mswud;C:\wxWidgets-3.2.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\Program Files\DCMTK\include;C:\wxWidgets-3.2.4\lib\vc_x64_lib\mswud;C:\wxWidgets-3.2.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\opencv\build\include;C:\Program Files\DCMTK\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\wxWidgets-3.2.4\lib\vc_x64_lib\mswud;C:\wxWidgets-3.2.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv\build\include;D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc;C:\Program Files\DCMTK\include;C:\wxWidgets-3.2.4\lib\vc_x64_lib\mswud;C:\wxWidgets-3.2.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -277,18 +277,18 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\dicom.cpp" />
     <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\fileHandle.cpp" />
     <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\myImage.cpp" />
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\thread.cpp" />
     <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\processor.cpp" />
     <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\processorAdapter.cpp" />
-    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\thread.cpp" />
-    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\dicom.h" />
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\dicom.cpp" />
     <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\fileHandle.h" />
     <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\myImage.h" />
+    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\thread.h" />
     <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\processor.h" />
     <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\processorAdapter.h" />
-    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\thread.h" />
+    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\dicom.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\ZERO_CHECK.vcxproj">

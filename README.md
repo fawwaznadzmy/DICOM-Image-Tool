@@ -25,7 +25,7 @@ Requirements:
 This Application developed with C++ and the setup was done using CMake. It is  `a console application` that can be compiled and run in `Windows and Linux`. Once run, the application will crop, auto rotate and display the given image file `(.jpeg, tiff or .png)` and the histogram.
 
 
-**Update**: Dicom image reader also implemented in the application. It able to display Dicom image and provide the metadata of the file. Example of the metadata can be found [here](app/src/dicom_metadata.tx)
+**Update**: Dicom image reader also implemented in the application. It ables to display DICOM image (crop and rotate) and provide the metadata of the file. Example of the metadata can be found [here](app/src/dicom_metadata.txt)
 ### How to run
 
 Example, for Windows application, type command line below to launch the application:

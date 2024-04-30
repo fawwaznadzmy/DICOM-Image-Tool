@@ -10,7 +10,7 @@
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/app/Debug/DicomImageTool.exe",
-            "args": ["D:/Project/Git/DICOM_V2/DICOM-Image-Tool/pictures/dicom/dicom/2174d2be-ccf6-4235-bd5f-afd400d96f86.png"],
+            "args": ["D:/Project/Git/DICOM_V2/DICOM-Image-Tool/pictures/dicom/dicom/2248d6d6-4f4f-4aba-8695-afd400d96f36.dcm"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],

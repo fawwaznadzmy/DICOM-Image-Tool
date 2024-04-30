@@ -5,10 +5,22 @@
 using namespace std;
 class DicomReader{
 public:
-    DicomReader(void);
+    DicomReader(const std::string& path);
     
-    void createDicomImage();
+    std::ostringstream displayMetaData();
 
-    void convertDcmToPixel(const std::string& path, int* row, int* cols, uint8_t* pixel );
+    string displayPatientName();
 
+    bool isFileValid();
+
+    void* image(int& width, int& height, int& depth);
+
+    DicomImage* image(){return m_DCMImage;}
+
+private:
+    DcmFileFormat m_fileformat;
+    DicomImage* m_DCMImage; 
+    bool  m_isFileValid;
+    string m_path;
+    
 };

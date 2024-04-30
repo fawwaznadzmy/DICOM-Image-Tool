@@ -14,7 +14,7 @@ Requirements:
 - [x] Display image histogram information of the dental x-ray image
 - [x] Auto rotate the image when displaying whereby the indicator on the image should be on the top left corner
 
-- [ ] Read and display dental x-ray image file using DICOM format (.dcm)
+- [x] Read and display dental x-ray image file using DICOM format (.dcm)
 - [ ] Read and display DICOM metadata of the DICOM file from local storage
 - [ ] Perform some basic image processing technique to enhance the details of the existing DICOM image
 

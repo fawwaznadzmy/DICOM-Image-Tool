@@ -28,11 +28,22 @@ void OpenCVImageProcessor::createImageFromPath (const std::string& path) const{
     }   
 }
 
-void OpenCVImageProcessor::createImageFromPixel(int rows, int cols, uint8_t pixel) const{
+void OpenCVImageProcessor::createImagefromDicom(DicomReader *dcm) const{
+ 
+ if(dcm->isFileValid()){}
+    Mat img(int(dcm->image()->getHeight()), int(dcm->image()->getWidth()), 
+    CV_MAKETYPE(dcm->image()->getDepth(), 1), (long*)dcm->image()->getOutputData(8));
 
-     Mat image(rows, cols, CV_8UC1, pixel); 
-     *m_Image = image;
+    // Define the desired width for the resized image
+    int target_width = 900;
 
+    // Calculate the corresponding height to maintain the aspect ratio
+    int target_height = static_cast<int>(img.rows * static_cast<double>(target_width) / img.cols);
+
+    // Resize the image
+    Mat resized_image;
+    resize(img, resized_image, Size(target_width, target_height));
+    *m_Image = resized_image;
 }
     
 void OpenCVImageProcessor::displayImage(const std::string& title) const{

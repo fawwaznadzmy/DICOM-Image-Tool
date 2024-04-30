@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "fileHandle.h"
+#include "dicom.h"
 
 #define _OPENCV_PROC 1
 
@@ -32,7 +33,7 @@ public:
 
     virtual void createImageFromPath (const std::string& path) const = 0;
 
-    virtual void createImageFromPixel(int rows, int cols, uint8_t pixel) const = 0;
+    virtual void createImagefromDicom(DicomReader *dcm) const = 0;
         
     static Processor * create();
 };
@@ -58,7 +59,7 @@ public:
 
     void createImageFromPath (const std::string& path) const override;
 
-    void createImageFromPixel(int rows, int cols, uint8_t pixel) const override;
+    void createImagefromDicom(DicomReader *dcm) const override;
 
     void displayWait() const override;
 

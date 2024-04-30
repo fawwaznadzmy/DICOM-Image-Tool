@@ -16,13 +16,17 @@ include_directories( ${OpenCV_INCLUDE_DIRS} )
 #find_package(Python2 COMPONENTS Interpreter Development REQUIRED)
 #include_directories("C:/Python27/Lib/site-packages/numpy/core/include")
 #include_directories("C:/Python27/include")
-
+# Specify the path to zlib
+set(ZLIB_ROOT "D:/DCMTK/dcmtk-3.6.8-win64-support-MD-msvc-17.4/zlib-1.3")
 
 # search for DCMTK library and header files
 SET(DCMTK_DIR "C:/Program Files/DCMTK") 
 find_package(DCMTK REQUIRED)
 
 link_directories("C:/Program Files/DCMTK/lib")
+link_directories("D:/DCMTK/dcmtk-3.6.8-win64-support-MD-msvc-17.4/zlib-1.3/lib")
+
+include_directories(${ZLIB_ROOT}/include)
 #find_package(ZLIB REQUIRED)
 
 #file(GLOB_RECURSE SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
@@ -40,6 +44,7 @@ add_executable(${PROJECT_NAME} main.cpp )
 INCLUDE_DIRECTORIES(${DCMTK_INCLUDE_DIRS})
 
 
+
 target_include_directories( ${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inc)
 
 target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS} )
@@ -48,6 +53,7 @@ target_link_libraries( ${PROJECT_NAME} dicom_lib)
 #target_link_libraries( ${PROJECT_NAME} ${Python2_LIBRARIES})
 #link_directories("C:/Python27/libs")
 target_link_libraries( ${PROJECT_NAME} ${DCMTK_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} wsock32 ws2_32 Netapi32 iphlpapi zlib_d)
 variable_watch(${DCMTK_LIBRARIES})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})

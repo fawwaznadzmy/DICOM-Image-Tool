@@ -15,7 +15,7 @@ Requirements:
 - [x] Auto rotate the image when displaying whereby the indicator on the image should be on the top left corner
 
 - [x] Read and display dental x-ray image file using DICOM format (.dcm)
-- [ ] Read and display DICOM metadata of the DICOM file from local storage
+- [x] Read and display DICOM metadata of the DICOM file from local storage
 - [ ] Perform some basic image processing technique to enhance the details of the existing DICOM image
 
 - [x] Write unit test (TDD/BDD)
@@ -24,6 +24,8 @@ Requirements:
 
 This Application developed with C++ and the setup was done using CMake. It is  `a console application` that can be compiled and run in `Windows and Linux`. Once run, the application will crop, auto rotate and display the given image file `(.jpeg, tiff or .png)` and the histogram.
 
+
+**Update**: Dicom image reader also implemented in the application. It able to display Dicom image and provide the metadata of the file. Example of the metadata can be found [here](app/src/dicom_metadata.tx)
 ### How to run
 
 Example, for Windows application, type command line below to launch the application:

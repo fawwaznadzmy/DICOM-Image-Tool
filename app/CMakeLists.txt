@@ -43,8 +43,6 @@ add_executable(${PROJECT_NAME} main.cpp )
 # Use the INCLUDE_DIRS variable populated by the DCMTK find module.
 INCLUDE_DIRECTORIES(${DCMTK_INCLUDE_DIRS})
 
-
-
 target_include_directories( ${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inc)
 
 target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS} )

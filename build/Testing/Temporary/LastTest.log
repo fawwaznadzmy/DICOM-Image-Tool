@@ -1,10 +1,10 @@
-Start testing: Apr 28 04:23 Malay Peninsula Standard Time
+Start testing: May 06 23:17 Malay Peninsula Standard Time
 ----------------------------------------------------------
 1/1 Testing: dicom_gtest
 1/1 Test: dicom_gtest
-Command: "D:/Project/Git/DICOM_V2/DICOM-Image-Tool/build/test/Debug/unit_test.exe"
+Command: "D:/Project/Git/DICOM_V2/DICOM-Image-Tool/build/test/Release/unit_test.exe"
 Directory: D:/Project/Git/DICOM_V2/DICOM-Image-Tool/build/test
-"dicom_gtest" start time: Apr 28 04:23 Malay Peninsula Standard Time
+"dicom_gtest" start time: May 06 23:17 Malay Peninsula Standard Time
 Output:
 ----------------------------------------------------------
 Running main() from D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\_deps\googletest-src\googletest\src\gtest_main.cc
@@ -25,11 +25,11 @@ Running main() from D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\_deps\googlet
 [==========] 4 tests from 1 test suite ran. (0 ms total)
 [  PASSED  ] 4 tests.
 <end of output>
-Test time =   1.23 sec
+Test time =   0.03 sec
 ----------------------------------------------------------
 Test Passed.
-"dicom_gtest" end time: Apr 28 04:23 Malay Peninsula Standard Time
-"dicom_gtest" time elapsed: 00:00:01
+"dicom_gtest" end time: May 06 23:17 Malay Peninsula Standard Time
+"dicom_gtest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Apr 28 04:23 Malay Peninsula Standard Time
+End testing: May 06 23:17 Malay Peninsula Standard Time

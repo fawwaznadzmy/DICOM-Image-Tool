@@ -6,7 +6,6 @@ void displayMetadata(MessageQueue& messageQueue) {
         MetadataMessage message = messageQueue.pop();
 
         if (message.isValid) {
-
             std::string tempFileName = "dicom_metadata.txt";
             std::ofstream outputFile(tempFileName);
             if (outputFile.is_open()) {

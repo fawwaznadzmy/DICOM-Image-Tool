@@ -1,2 +1,2 @@
-dicom_gtest 4 0.599709
+dicom_gtest 12 0.469478
 ---

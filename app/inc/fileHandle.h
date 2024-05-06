@@ -24,12 +24,13 @@ public:
 
     virtual bool saveFile(const std::string& content) const = 0;
 
-
     virtual bool deleteFile() const = 0;
 
     virtual long long getFileSize() const = 0;
 
-    virtual std::string getFilePath() const =0;
+    virtual std::string getFilePath() const {return filePath;}
+
+    virtual void setFilePath(const std::string& path) { filePath = path;}
 
     static FileHandle* create(const std::string& path);
 
@@ -46,8 +47,6 @@ public:
     bool deleteFile() const override ;
 
     long long getFileSize() const override ;
-
-    std::string getFilePath() const {return filePath;}
 
 };
 

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Win32-MSBuild"
+	BuildStamp="20240507-1602-Experimental"
+	Name="LAPTOP-ABCC0QRG"
+	Generator="ctest-3.29.2"
+	CompilerName="C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/bin/Hostx86/x64/cl.exe"
+	CompilerVersion="19.39.33523.0"
+	OSName="Windows"
+	Hostname="LAPTOP-ABCC0QRG"
+	OSRelease=" Personal"
+	OSVersion=" (Build 22631)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="12"
+	ProcessorCacheSize="-1"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="4"
+	TotalVirtualMemory="21673"
+	TotalPhysicalMemory="7886"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2419"
+	>
+	<Testing>
+		<StartDateTime>May 08 00:08 Malay Peninsula Standard Time</StartDateTime>
+		<StartTestTime>1715098111</StartTestTime>
+		<TestList>
+			<Test>./test/dicom_gtest</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>dicom_gtest</Name>
+			<Path>./test</Path>
+			<FullName>./test/dicom_gtest</FullName>
+			<FullCommandLine>D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\test\Debug\unit_test.exe</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>1.62999</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\test\Debug\unit_test.exe</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyNk8tOwzAQRff5ilm2i0S0PARIrAgUhHioFDZNVbnO0BgcT2RPSvl77AahtKC2s0j8OHOvPckMa2OUmUMplOl04c1SCel59mTpHSVnA8VZenv5eD997TeD+LYUc4xHRDqb1Urn2TTHymVzorlGRsexs7I1zVbTMJoGk0TKaHzxGxMY/pzgDALjmiP0VxNwtfLvJBrHvzGBgaaZ0A2AZqEsmRKNh5HjutqAj9qqqZJUDlHkaEd+NRrD8OUBVjHZ3EwuyTi2tWSyHmzi8W47CJ3eKZSuu105Va7S4useWaSCxXb1Ddg7nOzt8CRY+co8iBL3Mmnx3udwt88AefU77L5Gm/TaZ432vl8KOiehrsDEQnej9cTjduK10ngjTK7x7xde30tkgfJjtOSrJaNxisz6DXbR0Dn4W6D/kp6R/e3Djq9vsdtknd/HJjyexQLD8lb9NtgIJ4lvmFGhHFTCMtAbcIFNb1HNVc3wKRxYLGmBOThlJILyfbeUiLlr4MKiK0jnIbt30D+C2Vfo2kn0DXnTaM8=</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>May 08 00:08 Malay Peninsula Standard Time</EndDateTime>
+		<EndTestTime>1715098113</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

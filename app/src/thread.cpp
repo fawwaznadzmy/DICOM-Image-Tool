@@ -28,7 +28,7 @@ MyThread::MyThread(const std::string& path){
  
 void MyThread::worker(MessageQueue& mq){
 
-    m_message.metadata= image->getFileMetadata().str();
+    m_message.metadata= image->getFileMetadata();
     m_message.isValid = true;
     mq.push(m_message);
     

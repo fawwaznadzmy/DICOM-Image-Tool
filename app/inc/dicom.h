@@ -2,25 +2,32 @@
 #include <iostream>
 #include <dcmtk/dcmdata/dctk.h>
 #include "dcmtk/dcmimgle/dcmimage.h"
-using namespace std;
+
 class DicomReader{
 public:
     DicomReader(const std::string& path);
+    ~DicomReader();
     
-    std::ostringstream displayMetaData();
+    std::string displayMetaData();
 
-    string displayPatientName();
+    std::string displayPatientName();
 
     bool isFileValid();
 
-    void* image(int& width, int& height, int& depth);
+    void* getImageData(int& width, int& height, int& depth);
 
-    DicomImage* image(){return m_DCMImage;}
+    long getImageWidth(){ return m_DCMImage->getWidth();}
 
+    long getImageHeight(){ return m_DCMImage->getHeight();}
+
+    long getImageDepth(){ return m_DCMImage->getDepth();}
+
+    void* getImageOutputData(){ return (void*)m_DCMImage->getOutputData(8);}
+  
 private:
     DcmFileFormat m_fileformat;
-    DicomImage* m_DCMImage; 
+    std::unique_ptr<DicomImage> m_DCMImage; 
     bool  m_isFileValid;
-    string m_path;
+    std::string m_path;
     
 };

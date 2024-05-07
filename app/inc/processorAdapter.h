@@ -3,7 +3,7 @@
 #include "processor.h";
 #include "dicom.h";
 
-using namespace std;
+
 
 class ProcessorAdapter {
 public:
@@ -17,9 +17,9 @@ public:
    
     void displayWait(){ processor->displayWait();}
 
-    std::ostringstream getFileMetadata(){return dicom->displayMetaData();}
+    std::string getFileMetadata(){return dicom->displayMetaData();}
 
-    string getPatientName();
+    std::string getPatientName();
 
     void createImage();
 

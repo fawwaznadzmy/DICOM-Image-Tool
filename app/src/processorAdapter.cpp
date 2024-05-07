@@ -8,7 +8,7 @@ ProcessorAdapter::ProcessorAdapter(const std::string& path) {
       
 }
 
-string ProcessorAdapter::getPatientName(){
+std::string ProcessorAdapter::getPatientName(){
     return dicom->displayPatientName();
 }
 

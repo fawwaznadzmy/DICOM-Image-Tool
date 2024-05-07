@@ -1,49 +1,58 @@
 
 #include "dicom.h"
 
-DicomReader::DicomReader(const std::string& path){
-
-    m_DCMImage = new DicomImage(path.c_str());
-    m_path = path;
-    m_isFileValid = false;
-
+DicomReader::DicomReader(const std::string& path)   
+ : m_path(path), m_isFileValid(false) {
+    
+    m_isFileValid = m_fileformat.loadFile(m_path.c_str()).good();
+   
+    if (m_isFileValid) {
+        m_DCMImage = std::make_unique<DicomImage>(m_path.c_str());
+    }
 }
 
+DicomReader::~DicomReader() {
+    // No need to explicitly delete m_DCMImage, it's automatically managed by std::unique_ptr.
+}
 
-std::ostringstream DicomReader::displayMetaData(){
-    if(isFileValid()){
-        DcmDataset* dataset = m_fileformat.getDataset();
-        
-        // Print metadata
-        //dataset->print(std::cout);
-        std::ostringstream oss;
-        dataset->print(oss);  
-        return oss;                             
+std::string DicomReader::displayMetaData(){
+   
+    if (!isFileValid()) {
+        throw std::runtime_error("File is not valid.");
     }
+    
+    std::ostringstream oss;
+    m_fileformat.getDataset()->print(oss);  
+    return oss.str();                             
  }
 
- string DicomReader::displayPatientName(){
-    OFString patientName;
-    if(isFileValid()){
-        if (m_fileformat.getDataset()->findAndGetOFString(DCM_PatientName, patientName).good())
-        {
-            return patientName.c_str();
-        }
-        else
-            return "Error: cannot access Patient's Name!";
+ std::string DicomReader::displayPatientName(){
+    if (!isFileValid()) {
+        throw std::runtime_error("File is not valid.");
     }
-   
+
+    OFString patientName;
+    if (m_fileformat.getDataset()->findAndGetOFString(DCM_PatientName, patientName).good())
+    {
+        return patientName.c_str();
+    }
+    else{
+        return "Error: cannot access Patient's Name!";
+    }
  }
 
  bool DicomReader::isFileValid(){
-    return  m_fileformat.loadFile(m_path.c_str()).good();
+    return  m_isFileValid;
  }
 
-void* DicomReader::image(int& width, int& height, int& depth){
-     DicomImage DCM_image(m_path.c_str());
-     width = DCM_image.getWidth(); 
-     height= DCM_image.getHeight(); 
-     depth = DCM_image.getDepth();
-     return (void*)DCM_image.getOutputData(8);
+void* DicomReader::getImageData(int& width, int& height, int& depth){
+    if (!isFileValid()) {
+        throw std::runtime_error("File is not valid.");
+    }
+
+    width = m_DCMImage->getWidth();
+    height = m_DCMImage->getHeight();
+    depth = m_DCMImage->getDepth();
+    return (void*)m_DCMImage->getOutputData(8);
  }
 

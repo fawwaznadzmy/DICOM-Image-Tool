@@ -1,20 +1,21 @@
 
 #include "processor.h"
 
-Processor::Processor(){
+IProcessor::IProcessor(){
      
 }
 
-Processor* Processor::create() {
+
+std::unique_ptr<IProcessor> IProcessor::create() {
 #ifdef _OPENCV_PROC
-    return new OpenCVImageProcessor();
+    return std::make_unique<OpenCVImageProcessor>();
 #else
-    return new CustoMmageProcessor (path);
+    return std::make_unique<CustoMmageProcessor> (path);
 #endif
 }
 
 #ifdef _OPENCV_PROC
-OpenCVImageProcessor::OpenCVImageProcessor(): Processor()
+OpenCVImageProcessor::OpenCVImageProcessor(): IProcessor()
 {
   m_Image = new cv::Mat;
 }

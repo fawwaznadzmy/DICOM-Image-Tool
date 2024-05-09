@@ -8,6 +8,8 @@
 class ProcessorAdapter {
 public:
     ProcessorAdapter(const std::string& path);
+
+    ~ProcessorAdapter();
    
     void displayImage(const std::string& title);
 
@@ -24,9 +26,9 @@ public:
     void createImage();
 
 private:
-    FileHandle *file;
+    std::unique_ptr<FileHandle> file;
 
-    Processor* processor;
+    std::unique_ptr<IProcessor> processor;
 
     DicomReader *dicom;
  

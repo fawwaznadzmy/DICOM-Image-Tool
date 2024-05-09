@@ -6,7 +6,7 @@
 class FileHandleTest : public ::testing::Test {
 protected:
     // Member variables accessible within the fixture
-    FileHandle* fileHandle; // Pointer to WindowsFileHandle instance
+    std::unique_ptr<FileHandle> fileHandle; // Pointer to WindowsFileHandle instance
 
     // This method will be called before each test case
     void SetUp() override {
@@ -19,7 +19,6 @@ protected:
     void TearDown() override {
         // Perform any necessary teardown actions here
         // For example, delete the WindowsFileHandle instance
-        delete fileHandle;
     }
 };
 

@@ -9,7 +9,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 add_library(GTest::GTest INTERFACE IMPORTED)
-target_link_libraries(GTest::GTest INTERFACE gtest_main)
+target_link_libraries(GTest::GTest INTERFACE gtest_main gmock_main)
 
 set(ZLIB_ROOT "D:/DCMTK/dcmtk-3.6.8-win64-support-MD-msvc-17.4/zlib-1.3")
 
@@ -38,6 +38,6 @@ target_link_libraries(unit_test
   ${OpenCV_LIBS}
   ${DCMTK_LIBRARIES}
   wsock32 ws2_32 Netapi32 iphlpapi zlib_d)
-  
+
 
 add_test(dicom_gtest unit_test)

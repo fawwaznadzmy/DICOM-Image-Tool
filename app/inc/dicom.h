@@ -29,5 +29,4 @@ private:
     std::unique_ptr<DicomImage> m_DCMImage; 
     bool  m_isFileValid;
     std::string m_path;
-    
 };

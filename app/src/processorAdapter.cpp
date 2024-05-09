@@ -3,7 +3,7 @@
 
 ProcessorAdapter::ProcessorAdapter(const std::string& path) { 
     file = FileHandle::create(path);
-    processor = Processor::create();
+    processor = IProcessor::create();
     dicom = new DicomReader(path);
       
 }

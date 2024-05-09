@@ -32,7 +32,8 @@ public:
 
     virtual void setFilePath(const std::string& path) { filePath = path;}
 
-    static FileHandle* create(const std::string& path);
+    //static FileHandle* create(const std::string& path);
+    static std::unique_ptr<FileHandle> create(const std::string& path);
 
 };
 

@@ -1,0 +1,54 @@
+Start testing: May 10 00:21 Malay Peninsula Standard Time
+----------------------------------------------------------
+1/1 Testing: dicom_gtest
+1/1 Test: dicom_gtest
+Command: "D:/Project/Git/DICOM_V2/DICOM-Image-Tool/build/test/Debug/unit_test.exe"
+Directory: D:/Project/Git/DICOM_V2/DICOM-Image-Tool/build/test
+"dicom_gtest" start time: May 10 00:21 Malay Peninsula Standard Time
+Output:
+----------------------------------------------------------
+Running main() from D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\_deps\googletest-src\googletest\src\gtest_main.cc
+[==========] Running 10 tests from 3 test suites.
+[----------] Global test environment set-up.
+[----------] 4 tests from DicomReaderTest
+[ RUN      ] DicomReaderTest.Constructor
+[       OK ] DicomReaderTest.Constructor (20 ms)
+[ RUN      ] DicomReaderTest.DisplayMetaData
+[       OK ] DicomReaderTest.DisplayMetaData (16 ms)
+[ RUN      ] DicomReaderTest.DisplayPatientName
+[       OK ] DicomReaderTest.DisplayPatientName (21 ms)
+[ RUN      ] DicomReaderTest.GetImageData
+[       OK ] DicomReaderTest.GetImageData (18 ms)
+[----------] 4 tests from DicomReaderTest (76 ms total)
+
+[----------] 5 tests from FileHandleTest
+[ RUN      ] FileHandleTest.checkTxtExtension
+[       OK ] FileHandleTest.checkTxtExtension (0 ms)
+[ RUN      ] FileHandleTest.checkSetGetFilePath
+[       OK ] FileHandleTest.checkSetGetFilePath (0 ms)
+[ RUN      ] FileHandleTest.TestSaveFile
+[       OK ] FileHandleTest.TestSaveFile (0 ms)
+[ RUN      ] FileHandleTest.TestDeleteFile
+File deleted successfully.
+[       OK ] FileHandleTest.TestDeleteFile (1 ms)
+[ RUN      ] FileHandleTest.TestGetFileSize
+[       OK ] FileHandleTest.TestGetFileSize (0 ms)
+[----------] 5 tests from FileHandleTest (2 ms total)
+
+[----------] 1 test from ProcessorTest
+[ RUN      ] ProcessorTest.DisplayImage
+[       OK ] ProcessorTest.DisplayImage (0 ms)
+[----------] 1 test from ProcessorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 3 test suites ran. (79 ms total)
+[  PASSED  ] 10 tests.
+<end of output>
+Test time =   3.02 sec
+----------------------------------------------------------
+Test Passed.
+"dicom_gtest" end time: May 10 00:21 Malay Peninsula Standard Time
+"dicom_gtest" time elapsed: 00:00:03
+----------------------------------------------------------
+
+End testing: May 10 00:21 Malay Peninsula Standard Time

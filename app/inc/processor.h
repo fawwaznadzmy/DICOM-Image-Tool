@@ -15,9 +15,11 @@ using namespace std;
 
 
 
-class Processor {
+class IProcessor {
 public:
-    Processor();
+    IProcessor();
+
+    virtual ~IProcessor() = default;
 
     virtual void displayImage(const std::string& title) const = 0;
 
@@ -35,7 +37,7 @@ public:
 
     virtual void createImagefromDicom(DicomReader *dcm) const = 0;
         
-    static Processor * create();
+    static std::unique_ptr<IProcessor> create();
 };
 
 
@@ -43,7 +45,7 @@ public:
 
 
 #ifdef _OPENCV_PROC
-class OpenCVImageProcessor : public Processor {
+class OpenCVImageProcessor : public IProcessor {
 public:  
     OpenCVImageProcessor();
     
@@ -75,7 +77,7 @@ protected:
 };
 
 #else
-class CustoMmageProcessor : public Processor {
+class CustoMmageProcessor : public IProcessor {
 public:
     CustoMmageProcessor():Processor(){};
     

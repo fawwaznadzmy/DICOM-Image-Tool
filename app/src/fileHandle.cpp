@@ -10,11 +10,11 @@ std::string FileHandle::getFileExtension() const {
 }
 
 
-FileHandle* FileHandle::create(const std::string& path) {
+std::unique_ptr<FileHandle> FileHandle::create(const std::string& path) {
 #ifdef _WIN32
-    return new WindowsFileHandle(path);
+    return std::make_unique<WindowsFileHandle>(path);
 #else
-    return new LinuxFileHandle(path);
+    return std::make_unique<LinuxFileHandle>(path);
 #endif
 }
 

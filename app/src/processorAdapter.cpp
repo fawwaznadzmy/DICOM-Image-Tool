@@ -3,14 +3,14 @@
 #include "dcmtk.h"
 
 ProcessorAdapter::ProcessorAdapter(const std::string& path) { 
-    file = FileHandle::create(path);
+    file = IFileHandle::create(path);
     processor = IProcessor::create();
     dicom = std::make_unique<Dcmtk>(path);
       
 }
 
   ProcessorAdapter::~ProcessorAdapter(){
-    
+
   }
 
 std::string ProcessorAdapter::getPatientName(){

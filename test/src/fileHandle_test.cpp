@@ -6,12 +6,11 @@
 class FileHandleTest : public ::testing::Test {
 protected:
 
-    std::unique_ptr<FileHandle> fileHandle; 
+    std::unique_ptr<IFileHandle> fileHandle; 
 
     void SetUp() override {
-        fileHandle = FileHandle::create("test_file.txt");
+        fileHandle = IFileHandle::create("test_file.txt");
     }
-
 
     void TearDown() override {
     }

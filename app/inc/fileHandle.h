@@ -10,14 +10,14 @@
 #include <unistd.h>
 #endif
 
-class FileHandle {
+class IFileHandle {
 protected:
     std::string filePath;
 
 public:
-    FileHandle(const std::string& path) : filePath(path) {}
+    IFileHandle(const std::string& path) : filePath(path) {}
 
-    virtual ~FileHandle() = default;
+    virtual ~IFileHandle() = default;
 
     virtual std::string getFileExtension() const;
 
@@ -32,15 +32,15 @@ public:
     virtual void setFilePath(const std::string& path) { filePath = path;}
 
     //static FileHandle* create(const std::string& path);
-    static std::unique_ptr<FileHandle> create(const std::string& path);
+    static std::unique_ptr<IFileHandle> create(const std::string& path);
 
 };
 
 
 #ifdef _WIN32
-class WindowsFileHandle : public FileHandle {
+class WindowsFileHandle : public IFileHandle {
 public:
-    WindowsFileHandle(const std::string& path) : FileHandle(path) {}
+    WindowsFileHandle(const std::string& path) : IFileHandle(path) {}
 
     bool saveFile(const std::string& content) const override ;
 
@@ -52,9 +52,9 @@ public:
 
 #else
 
-class LinuxFileHandle : public FileHandle {
+class LinuxFileHandle : public IFileHandle {
 public:
-    LinuxFileHandle(const std::string& path) : FileHandle(path) {}
+    LinuxFileHandle(const std::string& path) : IFileHandle(path) {}
 
     bool saveFile(const std::string& content) const override ;
 

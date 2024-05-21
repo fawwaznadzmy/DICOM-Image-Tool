@@ -27,7 +27,7 @@ public:
     void createImage();
 
 private:
-    std::unique_ptr<FileHandle> file;
+    std::unique_ptr<IFileHandle> file;
 
     std::unique_ptr<IProcessor> processor;
 

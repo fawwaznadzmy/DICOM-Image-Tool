@@ -1,7 +1,7 @@
 #include "fileHandle.h"
 
 
-std::string FileHandle::getFileExtension() const {
+std::string IFileHandle::getFileExtension() const {
     size_t dotIndex = filePath.find_last_of(".");
     if (dotIndex != std::string::npos) {
         return filePath.substr(dotIndex + 1);
@@ -10,7 +10,7 @@ std::string FileHandle::getFileExtension() const {
 }
 
 
-std::unique_ptr<FileHandle> FileHandle::create(const std::string& path) {
+std::unique_ptr<IFileHandle> IFileHandle::create(const std::string& path) {
 #ifdef _WIN32
     return std::make_unique<WindowsFileHandle>(path);
 #else

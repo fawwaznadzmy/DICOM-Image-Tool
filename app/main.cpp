@@ -2,8 +2,6 @@
 #include <thread>
 #include "thread.h"
 
-#include <dcmtk/dcmdata/dctk.h>
-#include "dcmtk/dcmimgle/dcmimage.h"
 
 void printHelp() {
     std::cout << "Usage: image_processor [image_path]" << std::endl;
@@ -23,15 +21,18 @@ int main(int argc, char* argv[]) {
     }
 
     std::string imagePath = argv[1];
-        // Create a message queue
     MessageQueue messageQueue;
-
-
     // Start the metadata display thread
     std::thread displayThread(displayMetadata, std::ref(messageQueue));
 
-    MyThread myThread(imagePath);
+    // Processor Thread
+    std::unique_ptr<IFileHandle> file = IFileHandle::create(imagePath);
+    std::unique_ptr<IProcessor> imageProcessor = IProcessor::create();
+    std::unique_ptr<IDicomReader> dcmReader = std::make_unique<Dcmtk>(imagePath);
+
+    MyThread myThread(imagePath,file,imageProcessor,dcmReader);
     std::thread processingThread(&MyThread::worker, &myThread, std::ref(messageQueue));
+
     processingThread.join();
     displayThread.join();
 

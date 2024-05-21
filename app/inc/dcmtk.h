@@ -17,21 +17,13 @@ public:
 
     bool isFileValid() const override;
 
-    long getImageWidth() const override { 
-        return m_DCMImage->getWidth();
-    }
+    long getImageWidth() const override;
 
-    long getImageHeight() const override { 
-        return m_DCMImage->getHeight();
-    }
+    long getImageHeight() const override;
 
-    long getImageDepth() const override { 
-        return m_DCMImage->getDepth();
-    }
-
-    void* getImageOutputData() const override{ 
-        return (void*)m_DCMImage->getOutputData(8);
-    }
+    long getImageDepth() const override;
+    
+    void* getImageOutputData() const override;
     
 private:
     std::unique_ptr<DcmFileFormat> m_fileformat;

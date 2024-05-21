@@ -24,11 +24,39 @@
 	ProcessorClockFrequency="2419"
 	>
 	<Testing>
-		<StartDateTime>May 21 10:31 Malay Peninsula Standard Time</StartDateTime>
-		<StartTestTime>1716258689</StartTestTime>
-		<TestList/>
-		<EndDateTime>May 21 10:31 Malay Peninsula Standard Time</EndDateTime>
-		<EndTestTime>1716258689</EndTestTime>
+		<StartDateTime>May 22 00:00 Malay Peninsula Standard Time</StartDateTime>
+		<StartTestTime>1716307213</StartTestTime>
+		<TestList>
+			<Test>./test/dicom_gtest</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>dicom_gtest</Name>
+			<Path>./test</Path>
+			<FullName>./test/dicom_gtest</FullName>
+			<FullCommandLine>D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\test\Debug\unit_test.exe</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>2.66482</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\test\Debug\unit_test.exe</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyVk1FvmzAQgN/5Ffc0BWmgJFtWFmlPpcuqqWkVpdtDiCLHHODN2Mg+2u3fz4apZX2g7F6w8efvTnC3a5USqoSaCTULoTC6hnSd3Rn9AzllG0FZen15e3P6tuwX0XXNSoz2Wsvs3AqZZ6ccG5uVWpcSCS1F1vDBNuu2fnXySWLOg8OnpzjC7m8FywvwkO1rWHUbsK1wzzg4RE9xhI3UZyZ7ANWDMFrVqByMFLXNC/jD0JoKruvPQuLevQsOsLvfQhfHf4/iS60smZaTNg7r4/brGAazRQK1DcesG6QbJJYyYmPWAeasqwnWO0bCfYEtq/EV8YB07ncT3N3//oKirOgV94B07sVU93eRUzVF3YH/Y06xmWbuwGfztP6BWeJ5IE1MhsHIta1WI5338vS5q4RWwdUaUl5fSfQtvoZ79VPpRwV7VsIb6FskT4riLc6LIgTJTIm+FxcXH5erJEnmIVDFFBj0w+fn7PzbVQZCQeHyBXHs5mVfCQsNMwS6cDj2o6VbalqCR2b9bf2AOVihOIJwY/eLI+a2hyuDttIy97cX8+X7PkV8DP4AiVhjqw==</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>May 22 00:00 Malay Peninsula Standard Time</EndDateTime>
+		<EndTestTime>1716307216</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

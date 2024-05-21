@@ -2,10 +2,9 @@
 #include "processorAdapter.h"
 #include "dcmtk.h"
 
-ProcessorAdapter::ProcessorAdapter(const std::string& path) { 
-    file = IFileHandle::create(path);
-    processor = IProcessor::create();
-    dicom = std::make_unique<Dcmtk>(path);
+ProcessorAdapter::ProcessorAdapter(const std::string& path, std::unique_ptr<IFileHandle> &file, 
+                     std::unique_ptr<IProcessor> &proc, std::unique_ptr<IDicomReader> &dcm):
+                     m_file(std::move(file)), m_processor(std::move(proc)), m_dicom(std::move(dcm)) { 
       
 }
 
@@ -14,19 +13,18 @@ ProcessorAdapter::ProcessorAdapter(const std::string& path) {
   }
 
 std::string ProcessorAdapter::getPatientName(){
-    return dicom->getPatientName();
+    return m_dicom->getPatientName();
 }
 
 void ProcessorAdapter::displayImage(const std::string& title){ 
-    processor->displayImage(title);
+    m_processor->displayImage(title);
 }
 
 
-
 void ProcessorAdapter::createImage(){
-    if(file->getFileExtension() == "dcm"){
-        processor->createImagefromDicom(dicom);
+    if(m_file->getFileExtension() == "dcm"){
+        m_processor->createImagefromDicom(m_dicom);
     }else{
-        processor->createImageFromPath(file->getFilePath());
+        m_processor->createImageFromPath(m_file->getFilePath());
     }
 }

@@ -35,8 +35,8 @@ include_directories(inc)
 
 #add_library(dicom_lib ${SRC_FILES} ${INC_FILES})
 add_library(dicom_lib 
-   src/fileHandle.cpp src/myImage.cpp src/thread.cpp src/imageProcessor.cpp src/processorAdapter.cpp src/dcmtk.cpp
-   inc/fileHandle.h inc/myImage.h inc/thread.h inc/imageProcessor.h inc/processorAdapter.h inc/dcmtk.h
+   src/fileHandle.cpp src/thread.cpp src/imageProcessor.cpp src/processorAdapter.cpp src/dcmtk.cpp
+   inc/fileHandle.h inc/thread.h inc/imageProcessor.h inc/processorAdapter.h inc/dcmtk.h inc/messageQueue.h
 )
 
 add_executable(${PROJECT_NAME} main.cpp )

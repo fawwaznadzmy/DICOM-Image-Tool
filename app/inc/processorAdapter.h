@@ -4,34 +4,32 @@
 #include "dicomInterface.h"
 #include "fileHandle.h"
 
-
-
 class ProcessorAdapter {
 public:
-    ProcessorAdapter(const std::string& path);
+    ProcessorAdapter(const std::string& path, std::unique_ptr<IFileHandle> &file, std::unique_ptr<IProcessor> &proc, std::unique_ptr<IDicomReader> &dcm);
 
     ~ProcessorAdapter();
    
     void displayImage(const std::string& title);
 
-    void autoCropAndRotateImage(){processor->autoCropAndRotateImage();}
+    void autoCropAndRotateImage(){m_processor->autoCropAndRotateImage();}
 
-    void displayHistogram(){ processor->displayHistogram();}
+    void displayHistogram(){ m_processor->displayHistogram();}
    
-    void displayWait(){ processor->displayWait();}
+    void displayWait(){ m_processor->displayWait();}
 
-    std::string getFileMetadata(){return dicom->getMetaData();}
+    std::string getFileMetadata(){return m_dicom->getMetaData();}
 
     std::string getPatientName();
 
     void createImage();
 
 private:
-    std::unique_ptr<IFileHandle> file;
+    std::unique_ptr<IFileHandle> m_file;
 
-    std::unique_ptr<IProcessor> processor;
+    std::unique_ptr<IProcessor> m_processor;
 
-    std::unique_ptr<IDicomReader> dicom;
+    std::unique_ptr<IDicomReader> m_dicom;
  
 };
 

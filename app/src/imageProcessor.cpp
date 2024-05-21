@@ -11,7 +11,7 @@ std::unique_ptr<IProcessor> IProcessor::create() {
 #ifdef _OPENCV_PROC
     return std::make_unique<OpenCVImageProcessor>();
 #else
-    return std::make_unique<CustoMmageProcessor> (path);
+    return std::make_unique<CustoMmageProcessor> ();
 #endif
 }
 
@@ -21,7 +21,7 @@ OpenCVImageProcessor::OpenCVImageProcessor(): IProcessor()
   m_Image = new cv::Mat;
 }
 
-OpenCVImageProcessor::  ~OpenCVImageProcessor(){
+OpenCVImageProcessor::~OpenCVImageProcessor(){
 
     delete(m_Image);
 }

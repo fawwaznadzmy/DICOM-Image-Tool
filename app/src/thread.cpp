@@ -20,9 +20,10 @@ void displayMetadata(MessageQueue& messageQueue) {
     }
 }
 
-MyThread::MyThread(const std::string& path){
-   image = std::make_unique<MyImage>(path);
-   m_path = path;
+MyThread::MyThread (const std::string& path, std::unique_ptr<IFileHandle>& file, 
+                   std::unique_ptr<IProcessor>& proc, std::unique_ptr<IDicomReader>& dcm) : m_path(path){
+   image = std::make_unique<ProcessorAdapter>(path,file,proc,dcm);
+
 }
  
 void MyThread::worker(MessageQueue& mq){

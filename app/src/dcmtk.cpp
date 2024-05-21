@@ -16,8 +16,7 @@ Dcmtk::~Dcmtk() {
 }
 
 std::string Dcmtk::getMetaData() const{
-   
-    if (!isFileValid()) {
+    if (!m_isFileValid) {
         throw std::runtime_error("File is not valid.");
     }
     
@@ -27,7 +26,7 @@ std::string Dcmtk::getMetaData() const{
  }
 
  std::string Dcmtk::getPatientName() const {
-    if (!isFileValid()) {
+    if (!m_isFileValid) {
         throw std::runtime_error("File is not valid.");
     }
 
@@ -40,6 +39,38 @@ std::string Dcmtk::getMetaData() const{
         return "Error: cannot access Patient's Name!";
     }
  }
+
+long Dcmtk::getImageWidth() const { 
+    if (!m_isFileValid) {
+        throw std::runtime_error("File is not valid.");
+    }
+
+    return m_DCMImage->getWidth();
+}
+
+long Dcmtk::getImageHeight() const { 
+    if (!m_isFileValid) {
+        throw std::runtime_error("File is not valid.");
+    }
+
+    return m_DCMImage->getHeight();
+}
+
+long Dcmtk::getImageDepth() const{ 
+    if (!m_isFileValid) {
+        throw std::runtime_error("File is not valid.");
+    }
+
+    return m_DCMImage->getDepth();
+}
+
+void* Dcmtk::getImageOutputData() const{ 
+    if (!m_isFileValid) {
+        throw std::runtime_error("File is not valid.");
+    }
+
+    return (void*)m_DCMImage->getOutputData(8);
+}
 
  bool Dcmtk::isFileValid() const{
     return  m_isFileValid;

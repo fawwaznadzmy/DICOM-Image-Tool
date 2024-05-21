@@ -4,9 +4,6 @@
     <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\fileHandle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\myImage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\thread.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -24,9 +21,6 @@
     <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\fileHandle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\myImage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\thread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -37,6 +31,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\dcmtk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\messageQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

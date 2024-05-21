@@ -27,7 +27,6 @@ public:
 
 class ProcessorTest : public ::testing::Test {
 protected:
-
     NiceMock<MockProcessor> mockProcessor;
 };
 

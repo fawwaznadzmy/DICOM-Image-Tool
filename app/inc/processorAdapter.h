@@ -1,7 +1,8 @@
 #pragma once
 
-#include "processor.h";
-#include "dicom.h";
+#include "imageProcessor.h"
+#include "dicomInterface.h"
+#include "fileHandle.h"
 
 
 
@@ -19,7 +20,7 @@ public:
    
     void displayWait(){ processor->displayWait();}
 
-    std::string getFileMetadata(){return dicom->displayMetaData();}
+    std::string getFileMetadata(){return dicom->getMetaData();}
 
     std::string getPatientName();
 
@@ -30,7 +31,7 @@ private:
 
     std::unique_ptr<IProcessor> processor;
 
-    DicomReader *dicom;
+    std::unique_ptr<IDicomReader> dicom;
  
 };
 

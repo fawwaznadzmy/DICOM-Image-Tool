@@ -2,23 +2,18 @@
 #include <stdio.h>
 #include "fileHandle.h"
 
-// Define a test fixture for the WindowsFileHandle class
+
 class FileHandleTest : public ::testing::Test {
 protected:
-    // Member variables accessible within the fixture
-    std::unique_ptr<FileHandle> fileHandle; // Pointer to WindowsFileHandle instance
 
-    // This method will be called before each test case
+    std::unique_ptr<FileHandle> fileHandle; 
+
     void SetUp() override {
-        // Perform any necessary setup actions here
-        // For example, create a new WindowsFileHandle instance
         fileHandle = FileHandle::create("test_file.txt");
     }
 
-    // This method will be called after each test case
+
     void TearDown() override {
-        // Perform any necessary teardown actions here
-        // For example, delete the WindowsFileHandle instance
     }
 };
 
@@ -33,22 +28,16 @@ TEST_F(FileHandleTest, checkSetGetFilePath){
    EXPECT_EQ(fileHandle->getFilePath(),path);
 }
 
-// Define test cases using the WindowsFileHandleTest fixture
 TEST_F(FileHandleTest, TestSaveFile) {
-    // Test saving a file using WindowsFileHandle
     EXPECT_TRUE(fileHandle->saveFile("Test content"));
 }
 
 TEST_F(FileHandleTest, TestDeleteFile) {
-    // Test deleting a file using WindowsFileHandle
-    // Assuming saveFile method is tested separately and works
     fileHandle->saveFile("Test content");
     EXPECT_TRUE(fileHandle->deleteFile());
 }
 
 TEST_F(FileHandleTest, TestGetFileSize) {
-    // Test getting the file size using WindowsFileHandle
-    // Assuming saveFile method is tested separately and works
     fileHandle->saveFile("Test content");
-    EXPECT_GT(fileHandle->getFileSize(), 0); // File size should be greater than 0
+    EXPECT_GT(fileHandle->getFileSize(), 0);
 }

@@ -33,10 +33,11 @@ include_directories(${ZLIB_ROOT}/include)
 #file(GLOB_RECURSE INC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/inc/*.h)
 include_directories(inc)
 
+#add_library(dicom_lib ${SRC_FILES} ${INC_FILES})
 add_library(dicom_lib 
-   src/fileHandle.cpp src/myImage.cpp src/thread.cpp src/processor.cpp src/processorAdapter.cpp src/dicom.cpp
-   inc/fileHandle.h inc/myImage.h inc/thread.h inc/processor.h inc/processorAdapter.h inc/dicom.h
-   )
+   src/fileHandle.cpp src/myImage.cpp src/thread.cpp src/imageProcessor.cpp src/processorAdapter.cpp src/dcmtk.cpp
+   inc/fileHandle.h inc/myImage.h inc/thread.h inc/imageProcessor.h inc/processorAdapter.h inc/dcmtk.h
+)
 
 add_executable(${PROJECT_NAME} main.cpp )
 

@@ -45,7 +45,7 @@ public:
     MyThread(const std::string& path);
     void worker(MessageQueue& messageQueue);
 private:
-    MyImage* image;
+    std::unique_ptr<MyImage> image;
     std::string m_path;
     MetadataMessage m_message;
 };

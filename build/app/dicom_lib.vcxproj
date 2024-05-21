@@ -280,15 +280,15 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\fileHandle.cpp" />
     <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\myImage.cpp" />
     <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\thread.cpp" />
-    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\processor.cpp" />
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\imageProcessor.cpp" />
     <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\processorAdapter.cpp" />
-    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\dicom.cpp" />
+    <ClCompile Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\src\dcmtk.cpp" />
     <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\fileHandle.h" />
     <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\myImage.h" />
     <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\thread.h" />
-    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\processor.h" />
+    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\imageProcessor.h" />
     <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\processorAdapter.h" />
-    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\dicom.h" />
+    <ClInclude Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\app\inc\dcmtk.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="D:\Project\Git\DICOM_V2\DICOM-Image-Tool\build\ZERO_CHECK.vcxproj">

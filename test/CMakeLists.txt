@@ -26,6 +26,7 @@ link_directories("D:/DCMTK/dcmtk-3.6.8-win64-support-MD-msvc-17.4/zlib-1.3/lib")
 include_directories(${ZLIB_ROOT}/include)
 
 include_directories(../app/inc)
+include_directories(inc)
 file(GLOB_RECURSE SRC_TEST_FILES src/*.cpp)
 add_executable(unit_test ${SRC_TEST_FILES})
 

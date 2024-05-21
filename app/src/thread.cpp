@@ -21,9 +21,8 @@ void displayMetadata(MessageQueue& messageQueue) {
 }
 
 MyThread::MyThread(const std::string& path){
-   image = new MyImage(path);
-   m_path =path;
-
+   image = std::make_unique<MyImage>(path);
+   m_path = path;
 }
  
 void MyThread::worker(MessageQueue& mq){

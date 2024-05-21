@@ -19,7 +19,6 @@ public:
 
     virtual ~FileHandle() = default;
 
-
     virtual std::string getFileExtension() const;
 
     virtual bool saveFile(const std::string& content) const = 0;

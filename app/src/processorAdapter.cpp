@@ -1,15 +1,20 @@
 
 #include "processorAdapter.h"
+#include "dcmtk.h"
 
 ProcessorAdapter::ProcessorAdapter(const std::string& path) { 
     file = FileHandle::create(path);
     processor = IProcessor::create();
-    dicom = new DicomReader(path);
+    dicom = std::make_unique<Dcmtk>(path);
       
 }
 
+  ProcessorAdapter::~ProcessorAdapter(){
+    
+  }
+
 std::string ProcessorAdapter::getPatientName(){
-    return dicom->displayPatientName();
+    return dicom->getPatientName();
 }
 
 void ProcessorAdapter::displayImage(const std::string& title){ 

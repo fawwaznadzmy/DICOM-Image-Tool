@@ -1,7 +1,8 @@
 #include "gtest/gtest.h"
 #include <gmock/gmock.h>
-#include "processor.h"
-#include "dicom.h"
+#include "imageProcessor.h"
+#include "dcmtk.h"
+#include "dicomInterface.h"
 #include <opencv2/opencv.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
@@ -10,38 +11,16 @@ using ::testing::Invoke;
 using ::testing::Return;
 using ::testing::NiceMock;
 
-class MockDicomReader : public DicomReader {
-public:
-    // Constructor
-    MockDicomReader(const std::string& path) : DicomReader(path) {}
-
-    MOCK_METHOD0(isFileValid, bool());
-
-    // Mocked method for getting image height
-    MOCK_METHOD0(getImageHeight, int());
-
-    // Mocked method for getting image width
-    MOCK_METHOD0(getImageWidth, int());
-
-    // Mocked method for getting image depth
-    MOCK_METHOD0(getImageDepth, int());
-
-    // Mocked method for getting image output data
-    MOCK_METHOD0(getImageOutputData, void*());
-};
-
 class MockProcessor: public IProcessor {
 public:
 
-
     MOCK_METHOD(void, displayImage,(const std::string& title), (const, override));
     MOCK_METHOD(void, displayHistogram,(), (const,override));
-    MOCK_METHOD(void, displayMetadata,(),(const,override));
     MOCK_METHOD(void, autoCropAndRotateImage,(), (const,override));
     MOCK_METHOD(std::string, getImageSize,(), (const,override));
     MOCK_METHOD(void, displayWait,(), (const,override));
     MOCK_METHOD(void, createImageFromPath, (const std::string& path),(const,override));
-    MOCK_METHOD(void, createImagefromDicom,(DicomReader *dcm),(const,override));
+    MOCK_METHOD(void, createImagefromDicom,(std::unique_ptr<IDicomReader>& dcm),(const,override));
         
 };
 
@@ -66,14 +45,6 @@ TEST_F(ProcessorTest, DisplayHistogram) {
     EXPECT_CALL(mockProcessor, displayHistogram());
 
     mockProcessor.displayHistogram();
-}
-
-
-TEST_F(ProcessorTest, DisplayMetadata) {
- 
-    EXPECT_CALL(mockProcessor, displayMetadata());
-
-    mockProcessor.displayMetadata();
 }
 
 

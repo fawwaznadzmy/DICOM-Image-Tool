@@ -28,9 +28,11 @@ public:
 
     virtual void displayWait() const =  0;
 
-    virtual void createImageFromPath (const std::string& path) const = 0;
+    virtual void createImageFromPath (const std::string& path) const =  0;
 
-    virtual void createImagefromDicom(std::unique_ptr<IDicomReader>& dcm) const = 0;
+    virtual void createImagefromDicom(IDicomReader* dcm) const = 0;
+
+    virtual void createImageFromRaw(int width, int height, int depth, long* data, int resize) const = 0;
         
     static std::unique_ptr<IProcessor> create();
 };
@@ -55,7 +57,9 @@ public:
 
     void createImageFromPath (const std::string& path) const override;
 
-    void createImagefromDicom(std::unique_ptr<IDicomReader>& dcm) const override;
+    void createImagefromDicom(IDicomReader* dcm) const override;
+
+    void createImageFromRaw(int width, int height, int depth, long* data, int resize) const override;
 
     void displayWait() const override;
 
@@ -66,8 +70,8 @@ private:
 
     bool isImageNeedToRotate(const cv::Mat& src, cv::Point pnt) const;
 
-protected:
-    cv::Mat* m_Image;
+    std::unique_ptr<cv::Mat> m_Image;
+    
 };
 
 #else

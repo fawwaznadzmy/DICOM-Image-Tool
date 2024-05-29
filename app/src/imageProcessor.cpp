@@ -1,6 +1,10 @@
 
 #include "imageProcessor.h"
+#include "matplotlibcpp.h"
 
+#include "Python.h"
+#include <vector>
+namespace plt = matplotlibcpp;
 
 
 IProcessor::IProcessor(){
@@ -18,23 +22,22 @@ std::unique_ptr<IProcessor> IProcessor::create() {
 #ifdef _OPENCV_PROC
 OpenCVImageProcessor::OpenCVImageProcessor(): IProcessor()
 {
-  m_Image = new cv::Mat;
+   m_Image = std::make_unique<cv::Mat>();
 }
 
 OpenCVImageProcessor::~OpenCVImageProcessor(){
 
-    delete(m_Image);
 }
-void OpenCVImageProcessor::createImageFromPath(const std::string& path) const{
+void OpenCVImageProcessor::createImageFromPath(const std::string& path) const {
    
-    *m_Image = cv::imread(path,cv::IMREAD_GRAYSCALE);
+    *m_Image  = cv::imread(path,cv::IMREAD_GRAYSCALE);
 
     if (m_Image->empty()) {
         std::cerr << "Error: Unable to load image " << path << std::endl;
-    }   
+    } 
 }
 
-void OpenCVImageProcessor::createImagefromDicom(std::unique_ptr<IDicomReader>& dcm) const{
+void OpenCVImageProcessor::createImagefromDicom(IDicomReader* dcm) const{
  
  if(dcm->isFileValid()){}
     cv::Mat imgDcm(int(dcm->getImageHeight()), int(dcm->getImageWidth()), 
@@ -52,19 +55,35 @@ void OpenCVImageProcessor::createImagefromDicom(std::unique_ptr<IDicomReader>& d
     *m_Image = resized_image;
 }
     
+void OpenCVImageProcessor::createImageFromRaw(int width, int height, int depth, long* data, int resize) const{
+    cv::Mat img(height, width, CV_MAKETYPE(depth,1), data);
+
+    if(resize > 0){
+        cv::Mat resized_image;
+
+        int newWidth = static_cast<int>(img.cols  * (resize / 100.0));
+        int newHeight = static_cast<int>(img.rows  * (resize / 100.0));
+        cv::resize(img, resized_image, cv::Size(newWidth,newHeight));
+
+        *m_Image = resized_image;
+    }else{
+        *m_Image = img;
+    }
+}
+
 void OpenCVImageProcessor::displayImage(const std::string& title) const{
     cv::imshow(title, *m_Image);
 }
 
 void OpenCVImageProcessor::displayHistogram() const{
 
+
     int histSize = 256; // Number of bins
     float range[] = {0, 256}; // Pixel value range
     const float* histRange = {range};
 
-
     cv::Mat hist;
-    calcHist(m_Image, 1, 0, cv::Mat(), hist, 1, &histSize, &histRange);
+    calcHist(m_Image.get(), 1, 0, cv::Mat(), hist, 1, &histSize, &histRange);
 
     int histWidth = 512;
     int histHeight = 400;
@@ -73,12 +92,12 @@ void OpenCVImageProcessor::displayHistogram() const{
 
     cv::normalize(hist, hist, 0, histImage.rows, cv::NORM_MINMAX, -1, cv::Mat());
 
-
     for (int i = 1; i < histSize; i++) {
         cv::line(histImage, cv::Point(binWidth * (i - 1), histHeight - cvRound(hist.at<float>(i - 1))),
             cv::Point(binWidth * (i), histHeight - cvRound(hist.at<float>(i))),
             cv::Scalar(255, 255, 255), 2, cv::LINE_AA);
     }
+
 
     cv::imshow("Histogram", histImage);
 

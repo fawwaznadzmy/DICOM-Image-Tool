@@ -20,8 +20,8 @@ public:
     MOCK_METHOD(std::string, getImageSize,(), (const,override));
     MOCK_METHOD(void, displayWait,(), (const,override));
     MOCK_METHOD(void, createImageFromPath, (const std::string& path),(const,override));
-    MOCK_METHOD(void, createImagefromDicom,(std::unique_ptr<IDicomReader>& dcm),(const,override));
-        
+    MOCK_METHOD(void, createImagefromDicom,(IDicomReader* dcm),(const,override));
+    MOCK_METHOD(void, createImageFromRaw,(int width, int height, int depth, long* data, int size),(const,override));
 };
 
 

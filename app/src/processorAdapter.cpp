@@ -23,7 +23,11 @@ void ProcessorAdapter::displayImage(const std::string& title){
 
 void ProcessorAdapter::createImage(){
     if(m_file->getFileExtension() == "dcm"){
-        m_processor->createImagefromDicom(m_dicom);
+       if(m_dicom->isFileValid()){
+        m_processor->createImageFromRaw(m_dicom->getImageWidth(),m_dicom->getImageHeight()
+                                       ,m_dicom->getImageDepth(),(long*)m_dicom->getImageOutputData(),50);
+       }
+     // m_processor->createImagefromDicom(m_dicom.get());
     }else{
         m_processor->createImageFromPath(m_file->getFilePath());
     }

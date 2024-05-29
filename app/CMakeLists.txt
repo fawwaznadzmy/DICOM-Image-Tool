@@ -13,9 +13,9 @@ find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
 
-#find_package(Python2 COMPONENTS Interpreter Development REQUIRED)
-#include_directories("C:/Python27/Lib/site-packages/numpy/core/include")
-#include_directories("C:/Python27/include")
+find_package(Python2 COMPONENTS Interpreter Development REQUIRED)
+include_directories("C:/Python27/Lib/site-packages/numpy/core/include")
+include_directories("C:/Python27/include")
 # Specify the path to zlib
 set(ZLIB_ROOT "D:/DCMTK/dcmtk-3.6.8-win64-support-MD-msvc-17.4/zlib-1.3")
 
@@ -25,6 +25,7 @@ find_package(DCMTK REQUIRED)
 
 link_directories("C:/Program Files/DCMTK/lib")
 link_directories("D:/DCMTK/dcmtk-3.6.8-win64-support-MD-msvc-17.4/zlib-1.3/lib")
+link_directories("C:/Python27/libs")
 
 include_directories(${ZLIB_ROOT}/include)
 #find_package(ZLIB REQUIRED)
@@ -36,7 +37,7 @@ include_directories(inc)
 #add_library(dicom_lib ${SRC_FILES} ${INC_FILES})
 add_library(dicom_lib 
    src/fileHandle.cpp src/thread.cpp src/imageProcessor.cpp src/processorAdapter.cpp src/dcmtk.cpp
-   inc/fileHandle.h inc/thread.h inc/imageProcessor.h inc/processorAdapter.h inc/dcmtk.h inc/messageQueue.h
+   inc/fileHandle.h inc/thread.h inc/imageProcessor.h inc/processorAdapter.h inc/dcmtk.h inc/messageQueue.h inc/matplotlibcpp.h
 )
 
 add_executable(${PROJECT_NAME} main.cpp )
@@ -49,8 +50,8 @@ target_include_directories( ${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/i
 target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS} )
 target_link_libraries( ${PROJECT_NAME} ${wxWidgets_LIBRARIES})
 target_link_libraries( ${PROJECT_NAME} dicom_lib)
-#target_link_libraries( ${PROJECT_NAME} ${Python2_LIBRARIES})
-#link_directories("C:/Python27/libs")
+target_link_libraries( ${PROJECT_NAME} ${Python2_LIBRARIES})
+
 target_link_libraries( ${PROJECT_NAME} ${DCMTK_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} wsock32 ws2_32 Netapi32 iphlpapi zlib_d)
 variable_watch(${DCMTK_LIBRARIES})

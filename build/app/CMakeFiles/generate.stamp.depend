@@ -10,6 +10,8 @@ C:/Program Files/CMake/share/cmake-3.29/Modules/Compiler/MSVC.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/FindDCMTK.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/FindPython/Support.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/FindPython2.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/FindwxWidgets.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/Platform/Windows-MSVC-C.cmake
 C:/Program Files/CMake/share/cmake-3.29/Modules/Platform/Windows-MSVC.cmake

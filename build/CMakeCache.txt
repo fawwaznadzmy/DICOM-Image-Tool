@@ -851,7 +851,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[C:/msys64/ucrt64/bin/pkg-config
 //Details about finding Python
 FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[C:/Users/fawwa/AppData/Local/Programs/Python/Python311/python.exe][cfound components: Interpreter ][v3.11.4()]
 //Details about finding Python2
-FIND_PACKAGE_MESSAGE_DETAILS_Python2:INTERNAL=[C:/Python27/python.exe][C:/Python27/libs/python27.lib][C:/Python27/include][cfound components: Interpreter Development Development.Module Development.Embed ][v2.7.18()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python2:INTERNAL=[C:/Python27/python.exe][optimized;C:/Python27/libs/python27.lib;debug;C:/Python27/libs/python27_d.lib][C:/Python27/include][cfound components: Interpreter Development Development.Module Development.Embed ][v2.7.18()]
 //Details about finding Python3
 FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[C:/Users/fawwa/AppData/Local/Programs/Python/Python311/python.exe][C:/Users/fawwa/AppData/Local/Programs/Python/Python311/libs/python311.lib][C:/Users/fawwa/AppData/Local/Programs/Python/Python311/include][cfound components: Interpreter Development Development.Module Development.Embed ][v3.11.4()]
 //Details about finding PythonInterp
@@ -1026,11 +1026,13 @@ _Python2_INTERPRETER_SIGNATURE:INTERNAL=6c5b686ef3ffdaf8f7e64be556ec0d78
 //Interpreter reason failure
 _Python2_Interpreter_REASON_FAILURE:INTERNAL=
 //Path to a library.
-_Python2_LIBRARY_DEBUG:INTERNAL=_Python2_LIBRARY_DEBUG-NOTFOUND
+_Python2_LIBRARY_DEBUG:INTERNAL=C:/Python27/libs/python27_d.lib
 //Path to a library.
 _Python2_LIBRARY_RELEASE:INTERNAL=C:/Python27/libs/python27.lib
 //NumPy reason failure
 _Python2_NumPy_REASON_FAILURE:INTERNAL=
+//Path to a library.
+_Python2_RUNTIME_LIBRARY_DEBUG:INTERNAL=_Python2_RUNTIME_LIBRARY_DEBUG-NOTFOUND
 //Path to a library.
 _Python2_RUNTIME_LIBRARY_RELEASE:INTERNAL=C:/Windows/System32/python27.dll
 //Compiler reason failure

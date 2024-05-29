@@ -11,6 +11,10 @@ FetchContent_MakeAvailable(googletest)
 add_library(GTest::GTest INTERFACE IMPORTED)
 target_link_libraries(GTest::GTest INTERFACE gtest_main gmock_main)
 
+find_package(Python2 COMPONENTS Interpreter Development REQUIRED)
+include_directories("C:/Python27/Lib/site-packages/numpy/core/include")
+include_directories("C:/Python27/include")
+
 set(ZLIB_ROOT "D:/DCMTK/dcmtk-3.6.8-win64-support-MD-msvc-17.4/zlib-1.3")
 
 find_package( OpenCV REQUIRED )
@@ -22,6 +26,7 @@ find_package(DCMTK REQUIRED)
 
 link_directories("C:/Program Files/DCMTK/lib")
 link_directories("D:/DCMTK/dcmtk-3.6.8-win64-support-MD-msvc-17.4/zlib-1.3/lib")
+link_directories("C:/Python27/libs")
 
 include_directories(${ZLIB_ROOT}/include)
 
@@ -38,6 +43,7 @@ target_link_libraries(unit_test
   dicom_lib 
   ${OpenCV_LIBS}
   ${DCMTK_LIBRARIES}
+  python27.lib
   wsock32 ws2_32 Netapi32 iphlpapi zlib_d)
 
 
